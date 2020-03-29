@@ -1,0 +1,39 @@
+{
+  "plugins": {
+    "posthtml-favicons": {
+      "outDir": "public",
+      "configuration": {
+        "path": "./",
+        "appName": null,
+        "appDescription": null,
+        "developerName": null,
+        "developerURL": null,
+        "dir": "auto",
+        "lang": "en-US",
+        "background": "#fff",
+        "theme_color": "#fff",
+        "display": "standalone",
+        "orientation": "any",
+        "start_url": "/?homescreen=1",
+        "version": 1,
+        "logging": false,
+        "icons": {
+          "android": true,
+          "appleIcon": true,
+          "appleStartup": false,
+          "coast": false,
+          "favicons": true,
+          "firefox": false,
+          "windows": true,
+          "yandex": false
+        }
+      }
+    },
+    "posthtml-link-noreferrer": {
+      "attr": [
+        "noopener",
+        "noreferrer"
+      ]
+    }
+  }
+}
