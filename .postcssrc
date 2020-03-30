@@ -2,12 +2,6 @@
   "plugins": {
     "autoprefixer": {},
     "postcss-zindex": {},
-    "postcss-sort-media-queries": {},
-    "postcss-remove-unused-css": {
-      "exts": [
-        ".js",
-        ".html"
-      ]
-    }
+    "postcss-sort-media-queries": {}
   }
 }
