@@ -1,0 +1,32 @@
+include layouts/button.pug
+include layouts/modal.pug
+
+- const experiences = { light: "Luminosité", sound: "Sonorité", movement: "Mouvement", temperature: "Température", pressure: "Pression", touch: "Touché" }
+
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Lab — ConstanteSans [MVP]
+    link(rel="stylesheet" href="styles/main.scss")
+    script(defer src="scripts/main.js")
+
+  body(data-namespace="home")
+
+    header(class="section section--header")
+
+      h1(class="logo") ConstanteSans
+
+      nav(class="menu")
+        ul(class="menu__list")
+          each content, id in experiences
+            +button(id, content)
+
+    main
+      section(class="section section--content")
+        p <strong class="bold">ConstanteSans</strong> est un projet experimental visant à explorer un potentiel, un futur de la typographie sur le web.
+        p Mettre en application les différentes fonctionnalités des variable fonts en les associant à des données physiques et dynamiques lié à l’utilisateur et son environnement.
+
+      each content, id in experiences
+        +modal(id, content)

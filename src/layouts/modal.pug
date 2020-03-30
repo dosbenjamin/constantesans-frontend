@@ -1,0 +1,11 @@
+mixin modal (id, content)
+  section(class="modal" data-experience=id)
+    .modal__header
+      h2(class="modal__title")= content
+      button(class="modal__button") Close
+    .modal__content
+      p Être plongé dans une ambiance lumineuse environnante.
+    .modal__footer
+      ul(class="modal__list")
+        li(class="modal__item") Température : 20°
+        li(class="modal__item") Largeur :  20
