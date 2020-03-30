@@ -1,0 +1,24 @@
+.menu {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0;
+  }
+
+  &__item {
+    border-left: 3px solid #fff;
+
+    &:nth-child(-n+3) {
+      border-bottom: 3px solid #fff;
+    }
+  }
+
+  &__button {
+    @include title;
+
+    padding: var(--vertical) units(2);
+    width: 100%;
+    cursor: pointer;
+    background-color: #000;
+  }
+}

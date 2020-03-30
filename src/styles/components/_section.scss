@@ -1,0 +1,18 @@
+.section {
+  width: 100vw;
+  display: flex;
+
+  &--header {
+    align-items: center;
+    justify-content: space-between;
+    background: $cGradient;
+  }
+
+  &--content {
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100vh - #{units(6)} - 3px);
+    background: $cGrey;
+    padding: units(4);
+  }
+}
