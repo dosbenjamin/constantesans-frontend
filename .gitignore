@@ -196,6 +196,7 @@ $RECYCLE.BIN/
 ### Custom ###
 # Files
 deploy.js
+*.Identifier
 
 # Folders
 public
