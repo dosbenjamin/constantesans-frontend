@@ -1,0 +1,36 @@
+$modularscale: (
+  base: 1em,
+  ratio: 1.333
+);
+
+@function units($value) {
+  @return calc(var(--vertical) * #{$value});
+}
+
+$fontSize: 2vmax;
+
+:root {
+  --vertical: calc((1.4 * #{$fontSize}) / 2);
+}
+
+p {
+  max-width: 30em;
+  margin-bottom: var(--vertical);
+}
+
+html {
+  font-size: #{$fontSize};
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  font-variation-settings: 'wght' 450;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  line-height: 1.4;
+}
+
+.bold {
+  font-variation-settings: 'wght' 500;
+}

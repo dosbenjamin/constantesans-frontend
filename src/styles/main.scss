@@ -1,3 +1,20 @@
-@import 'utils/types';
-@import 'utils/colors';
-@import 'utils/breakpoints';
+@charset 'utf-8';
+
+// Dependencies
+@import 'sanitize.css';
+@import '~modularscale-sass';
+
+// Utils
+@import './utils/reset';
+@import './utils/tools';
+@import './utils/fonts';
+@import './utils/types';
+@import './utils/colors';
+@import './utils/breakpoints';
+
+// Components
+@import './components/title';
+@import './components/section';
+@import './components/logo';
+@import './components/menu';
+@import './components/modal';

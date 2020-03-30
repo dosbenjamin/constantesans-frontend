@@ -1,0 +1,12 @@
+@mixin pseudo {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+}
+
+@mixin hideText {
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 200%;
+}
