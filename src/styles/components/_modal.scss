@@ -1,7 +1,6 @@
 $border: 3px solid $cPurple;
 
 @mixin button {
-  position: absolute;
   height: var(--vertical);
   width: 3px;
   background-color: #fff;
@@ -14,10 +13,17 @@ $border: 3px solid $cPurple;
   left: 20vw;
   border: $border;
   width: 35vmax;
-  height: 30vmax;
   background-color: #fff;
   box-shadow: 0 10px 23px rgba(0, 0, 0, 0.25);
   display: none;
+
+  &--visible {
+    display: block;
+  }
+
+  &--front {
+    z-index: 999;
+  }
 
   &__header {
     display: flex;
@@ -30,6 +36,8 @@ $border: 3px solid $cPurple;
 
   &__title {
     @include title;
+
+    pointer-events: none;
   }
 
   &__button {
@@ -56,15 +64,12 @@ $border: 3px solid $cPurple;
   }
 
   &__content {
-    padding: units(1.5);
+    padding: units(1.2);
   }
 
   &__footer {
     border-top: $border;
     width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
     color: #fff;
     background-color: #000;
   }
@@ -75,12 +80,12 @@ $border: 3px solid $cPurple;
 
   &__item {
     line-height: var(--vertical);
+    width: 50%;
     padding: units(0.5) var(--vertical);
     font-size: ms(-2);
-    border-right: $border;
-  }
 
-  &--front {
-    z-index: 999;
+    &:not(:last-child) {
+      border-right: $border;
+    }
   }
 }

@@ -1,11 +1,21 @@
+//- Create a modal for each experience.
+
+include modal-item.pug
+include sentence.pug
+
 mixin modal (id, content)
-  section(class="modal" data-experience=id)
+
+  - const attribute = `data-modal-${id}`
+
+  section(class='modal')&attributes({[attribute]: ''})
+
     .modal__header
-      h2(class="modal__title")= content
-      button(class="modal__button") Close
-    .modal__content
-      p Être plongé dans une ambiance lumineuse environnante.
+      h2(class='modal__title')= content
+      button(class='modal__button') Close
+
+    div(class=`experience experience--${id}`)
+      include experiences/sentences.pug
+
     .modal__footer
-      ul(class="modal__list")
-        li(class="modal__item") Température : 20°
-        li(class="modal__item") Largeur :  20
+      ul(class='modal__list')
+        include experiences/values.pug

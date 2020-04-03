@@ -12,7 +12,7 @@ const style = `
 export default {
   /**
    * Print the name of this project in the console.
-   * @return {void} Nothing
+   * @return {Void} Nothing
    */
   print () {
     console.info(`%c${message}`, style)

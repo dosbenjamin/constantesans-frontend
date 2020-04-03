@@ -1,0 +1,13 @@
+//- Include the right sentences component.
+
+include ../sentence.pug
+
+case id
+  when 'light'
+    include sentences/light.pug
+
+  when 'sound'
+    include sentences/sound.pug
+
+  default
+    +sentence

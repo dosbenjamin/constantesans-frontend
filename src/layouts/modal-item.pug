@@ -1,0 +1,5 @@
+//- Create a value field.
+
+mixin modal-item(name='', value='')
+  li(class='modal__item')= name !== '' ?  `${name} :` : 'Indisponible'
+    span= value
