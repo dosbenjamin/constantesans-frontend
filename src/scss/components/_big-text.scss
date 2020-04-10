@@ -1,4 +1,4 @@
-@mixin title {
+.bigText {
   font-family: 'Agrandir', sans-serif;
   font-weight: normal;
   font-size: ms(-1);
@@ -6,5 +6,4 @@
   text-transform: lowercase;
   line-height: var(--vertical);
   color: #fff;
-  margin: 0;
 }

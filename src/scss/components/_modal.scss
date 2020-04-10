@@ -1,21 +1,21 @@
 $border: 3px solid $cPurple;
-
-@mixin button {
-  height: var(--vertical);
-  width: 3px;
-  background-color: #fff;
-  left: 50%;
-}
+$modals: 6;
 
 .modal {
   position: absolute;
-  top: 20vw;
-  left: 20vw;
   border: $border;
   width: 35vmax;
   background-color: #fff;
   box-shadow: 0 10px 23px rgba(0, 0, 0, 0.25);
   display: none;
+
+  @for $i from 0 through $modals {
+    $value: (20 + $i);
+    &:nth-last-child(#{$i}) {
+      top: $value + vh;
+      left: $value + vw;
+    }
+  }
 
   &--visible {
     display: block;
@@ -34,31 +34,33 @@ $border: 3px solid $cPurple;
     cursor: move;
   }
 
-  &__title {
-    @include title;
-
+  .bigText {
+    margin: 0;
     pointer-events: none;
   }
 
   &__button {
     @include hideText;
 
-    cursor: pointer;
     height: var(--vertical);
     width: var(--vertical);
     position: relative;
 
-    &::before {
+    &::before,
+    &::after {
       @include pseudo;
-      @include button;
 
+      height: var(--vertical);
+      width: 3px;
+      background-color: #fff;
+      left: 50%;
+    }
+
+    &::before {
       transform: translateX(-50%) rotate(45deg);
     }
 
     &::after {
-      @include pseudo;
-      @include button;
-
       transform: translateX(-50%) rotate(-45deg);
     }
   }

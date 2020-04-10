@@ -2,7 +2,6 @@
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin: 0;
   }
 
   &__item {
@@ -13,12 +12,9 @@
     }
   }
 
-  &__button {
-    @include title;
-
+  .bigText {
     padding: var(--vertical) units(2);
     width: 100%;
-    cursor: pointer;
     background-color: #000;
   }
 }

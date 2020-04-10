@@ -13,11 +13,6 @@ $fontSize: 2vmax;
   --vertical: calc((1.4 * #{$fontSize}) / 2);
 }
 
-p {
-  max-width: 30em;
-  margin-bottom: var(--vertical);
-}
-
 html {
   font-size: #{$fontSize};
 }
@@ -29,6 +24,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: antialiased;
   line-height: 1.4;
+}
+
+p {
+  max-width: 30em;
+  margin-bottom: var(--vertical);
+
+  // &:not(:last-of-type) {
+  //   margin-bottom: var(--vertical);
+  // }
 }
 
 .bold {

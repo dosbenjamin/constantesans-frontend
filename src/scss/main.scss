@@ -4,16 +4,18 @@
 @import 'sanitize.css';
 @import '~modularscale-sass';
 
-// Utils
-@import './utils/reset';
-@import './utils/tools';
-@import './utils/fonts';
-@import './utils/types';
-@import './utils/colors';
-@import './utils/breakpoints';
+// Settings
+@import './settings/resets';
+@import './settings/fonts';
+@import './settings/typography';
+@import './settings/colors';
+
+// Tools
+@import './helpers/pseudo';
+@import './helpers/hide-text';
 
 // Components
-@import './components/title';
+@import './components/big-text';
 @import './components/section';
 @import './components/logo';
 @import './components/menu';
