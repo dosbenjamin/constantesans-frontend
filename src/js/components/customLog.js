@@ -1,4 +1,4 @@
-const message = 'Constante-Sans'
+const message = 'ConstanteSans'
 
 const style = `
   background: #524bfb;
@@ -12,7 +12,8 @@ const style = `
 export default {
   /**
    * Print the name of this project in the console.
-   * @return {Void} Nothing
+   *
+   * @returns {void} Nothing
    */
   print () {
     console.info(`%c${message}`, style)

@@ -1,6 +1,6 @@
 import DecibelMeter from 'decibel-meter'
 
-// TODO: Gérer erreur si pas de micro détecter.
+// TODO: Gérer erreur si pas de micro détecté.
 
 const meter = new DecibelMeter('meter')
 
@@ -14,7 +14,8 @@ const experience = {
 
   /**
    * Start the sound experience.
-   * @return {Void} - Nothing
+   *
+   * @returns {void} - Nothing
    */
   bind () {
     experience.weight = experience.value * 900
@@ -25,7 +26,8 @@ const experience = {
 
   /**
    * Stop the sound experience.
-   * @return {Void} - Nothing
+   *
+   * @returns {void} - Nothing
    */
   unbind () {}
 }
@@ -40,21 +42,24 @@ meter.on('sample', (dB, percent, value) => {
 
 export default {
   /**
-  * Start to listen noise.
-  * @return {Void} - Nothing
-  */
-  listen () {
+   * Start to listen noise.
+   *
+   * @returns {void} - Nothing
+   */
+  start () {
     experience.$element = this.$element
     meter.listen()
   },
 
   /**
-  * Stop listening noise.
-  * @return {Void} - Nothing
-  */
-  stopListening () {
+   * Stop listening noise.
+   *
+   * @returns {void} - Nothing
+   */
+  stop () {
     meter.stopListening()
     experience.unbind()
   },
+
   $element: null
 }

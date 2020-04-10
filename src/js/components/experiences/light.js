@@ -1,5 +1,5 @@
 import { $$ } from '../../utils/selectors'
-import socket from '../socket-config'
+import socket from '../../utils/socketConfig'
 
 const experience = {
   $element: null,
@@ -9,7 +9,8 @@ const experience = {
 
   /**
    * Start the light experience.
-   * @return {Void} - Nothing
+   *
+   * @returns {void} - Nothing
    */
   bind () {
     this.content = this.state === 'on' ? ' allumée' : ' éteinte'
@@ -23,7 +24,8 @@ const experience = {
 
   /**
    * Stop the light experience.
-   * @return {Void} - Nothing
+   *
+   * @returns {void} - Nothing
    */
   unbind () {
     this.$$values[0].textContent = ''
@@ -35,9 +37,10 @@ export default {
 
   /**
    * Start to watch for light changes.
-   * @return {Void} - Nothing
+   *
+   * @returns {void} - Nothing
    */
-  watch () {
+  start () {
     experience.$element = this.$element
 
     socket.emit('light_check', true)
@@ -50,9 +53,10 @@ export default {
 
   /**
    * Stop watching for light changes.
-   * @return {Void} - Nothing
+   *
+   * @returns {void} - Nothing
    */
-  stopWatching () {
+  stop () {
     socket.off('light_state')
     experience.unbind()
   },

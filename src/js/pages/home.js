@@ -1,16 +1,18 @@
 import { $$ } from '../utils/selectors'
-import customLog from '../components/custom-log'
+import customLog from '../components/customLog'
 import Modal from '../components/Modal'
 
-const $$buttons = $$('.menu__button')
+const $$buttons = $$('.menu .bigText')
 
 export default {
   /**
    * Initialize the page.
-   * @return {Void} Nothing
+   *
+   * @returns {void} Nothing
    */
   init () {
     customLog.print()
+
     for (const $button of $$buttons) {
       const { button: experience } = $button.dataset
       const modal = new Modal(experience)
