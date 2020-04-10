@@ -1,0 +1,14 @@
+- const attribute = `data-modal-${id}`
+
+section(class='modal')&attributes({[attribute]: ''})
+  .modal__header
+    h2(class='bigText')=content
+    button(class='modal__button') Close
+
+  div(class=`experience experience--${id}`)
+    include content/sentences.pug
+
+  if experience
+    .modal__footer
+      ul(class='modal__list')
+        include content/values.pug

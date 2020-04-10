@@ -1,0 +1,11 @@
+include ../sentence.pug
+
+case id
+  when 'light'
+    include home/sentences/light.pug
+
+  when 'sound'
+    include home/sentences/sound.pug
+
+  default
+    +sentence

@@ -1,0 +1,24 @@
+
+- const url = 'https://benjamindossantos/projets/tfe'
+- const coverPath = ''
+- const cover = `${url}/${coverPath}`
+
+block setup
+
+<!DOCTYPE html>
+html(lang='fr' itemscope)
+
+  include ../layouts/head.pug
+
+  body(data-namespace=page)
+    block header
+      include ../layouts/header.pug
+
+    main
+      block content
+
+      block modalArea
+        each content, id in modals
+          include ../components/modal/modal.pug
+
+    block footer

@@ -1,0 +1,11 @@
+include ../value.pug
+
+case id
+  when 'light'
+    include home/values/light.pug
+
+  when 'sound'
+    include home/values/sound.pug
+
+  default
+    +value

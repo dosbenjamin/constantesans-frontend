@@ -1,0 +1,27 @@
+extends templates/default.pug
+
+block setup
+  - const page = 'home'
+  - const name = 'Lab — ConstanteSans [MVP]'
+  - const description = 'test'
+  -
+    const modals = {
+      light: 'Luminosité',
+      sound: 'Sonorité',
+      movement: 'Mouvement',
+      temperature: 'Température',
+      pressure: 'Pression',
+      touch: 'Touché'
+    }
+
+block content
+  section(class='section section--content')
+    p.
+      #[strong(class='bold') ConstanteSans] est un projet expérimental
+      visant à explorer un potentiel, un futur de la typographie sur le web.
+    p.
+      Mettre en application les différentes fonctionnalités des variable fonts en les associant
+      à des données physiques et dynamiques directement liées à l’utilisateur et son environnement.
+
+prepend modalArea
+  - const experience = true
