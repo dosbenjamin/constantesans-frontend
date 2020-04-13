@@ -1,12 +1,38 @@
 {
+  "name": "constante-sans-frontend",
+  "version": "1.0.0",
+  "main": "src/views/index.pug",
   "scripts": {
-    "start": "parcel src/views/index.pug --out-dir public/ --no-autoinstall --port 8080",
-    "build": "parcel build src/index.pug --public-url ./ --no-source-maps --experimental-scope-hoisting --out-dir public/ --no-cache",
-    "deploy": "node deploy"
+    "start": "parcel src/views/index.pug --out-dir public/ --port 8080",
+    "build": "npm run lint:fix && parcel build src/views/index.pug --public-url ./ --no-source-maps --experimental-scope-hoisting --out-dir public/ --no-cache",
+    "lint": "npm-run-all -p lint:js lint:scss",
+    "lint:fix": "npm-run-all -p lint:js:fix lint:scss:fix",
+    "lint:js": "eslint src/js/**/*.js",
+    "lint:js:fix": "eslint src/js/**/*.js --fix",
+    "lint:scss": "stylelint 'src/scss/**/*.scss'",
+    "lint:scss:fix": "stylelint 'src/scss/**/*.scss' --fix",
+    "deploy:dev": "npm run build && node config/deploy.dev.js",
+    "deploy:prod": "npm run build && node config/deploy.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dosbenjamin/constante-sans.git"
+  },
+  "author": "Benjamin Dos Santos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dosbenjamin/constante-sans/issues"
+  },
+  "homepage": "https://github.com/dosbenjamin/constante-sans",
+  "dependencies": {
+    "decibel-meter": "^2.0.0",
+    "modularscale-sass": "^3.0.10",
+    "sanitize.css": "^11.0.0",
+    "socket.io-client": "^2.3.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.5",
-    "decibel-meter": "^2.0.0",
+    "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.20.1",
@@ -14,24 +40,25 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "modularscale-sass": "^3.0.10",
+    "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-clean": "^1.1.0",
     "parcel-plugin-compression": "dosbenjamin/parcel-plugin-compression",
+    "parcel-plugin-copy-files": "^0.0.3",
     "parcel-plugin-imagemin": "^4.0.1",
     "postcss": "^7.0.27",
-    "postcss-remove-unused-css": "^1.0.4",
     "postcss-sort-media-queries": "^1.4.23",
     "postcss-zindex": "^4.0.1",
     "posthtml": "^0.12.0",
     "posthtml-favicons": "^1.3.0",
     "posthtml-link-noreferrer": "^1.0.6",
     "pug": "^2.0.4",
-    "sanitize.css": "^11.0.0",
     "sass": "^1.26.3",
     "sftp-sync-deploy": "^0.7.1",
-    "socket.io-client": "^2.3.0",
     "stylelint": "^13.2.1",
     "stylelint-config-standard": "^20.0.0"
-  }
+  },
+  "files-to-copy": [
+    "src/.htaccess"
+  ]
 }
