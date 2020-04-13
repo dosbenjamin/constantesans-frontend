@@ -2,23 +2,27 @@ import io from 'socket.io-client'
 
 // TODO: Détecter si l'utilisateur à accès raspberry.
 
-const url = 'https://clever-owl-36.telebit.io'
+const rpi = {
+  url: 'wss://clever-owl-36.telebit.io',
+  isConnected: false,
+  socket () {
+    return io.connect(this.url, {
+      autoConnect: false,
+      transports: ['websocket']
+    })
+  },
+  connect () {
+    return this.socket().connect()
+  },
+  disconnect () {
+    return this.socket().disconnect()
+  }
+}
 
-// window.fetch(url, {
-//   mode: 'cors',
-//   headers: {
-//     'Content-Type': 'application/json',
-//     'Access-Control-Allow-Origin': ''
-//   }
-// })
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log(data)
-//   })
-
-const socket = io.connect(url, {
-  transports: ['websocket'],
-  autoConnect: true
+const middleware = io.connect('wss://rpi.benjamindossantos.be', { transports: ['polling'] })
+middleware.on('connected', state => {
+  state ? rpi.connect() : rpi.disconnect()
+  rpi.isConnected = state
 })
 
-export default socket
+// export default socket
