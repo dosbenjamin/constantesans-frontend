@@ -1,5 +1,4 @@
-import { $, $$ } from '../utils/selectors'
-import experience from './experiencesManager'
+import { $ } from '../utils/selectors'
 
 // TODO: Garder la position en z-index de chaque fenêtre.
 // TODO: z-index le plus haut lors de l'affiche.
@@ -10,91 +9,79 @@ import experience from './experiencesManager'
  */
 export default class Modal {
   /**
-   * Manage a modal.
+   * Initialize and manage a modal.
    *
-   * @param {string} name - The name of the experience.
+   * @param {string} name - The name of the modal.
    */
   constructor (name) {
-    this.experience = name
-    this.selected = false
+    this.name = name
     this.isClosed = true
-    this.$modal = $(`[data-modal-${this.experience}]`)
+    this.$modal = $(`[data-modal-${this.name}]`)
     this.$header = $('.modal__header', this.$modal)
     this.$button = $('.modal__button', this.$modal)
-    this.$experience = $(`.experience--${this.experience}`)
-    this.$$sentences = $$('.experience__sentence', this.$modal)
-    this.$sentence = null
-    this.events = {
-      initMove: this.move(),
-      initClose: this.close()
-    }
+    this.move()
+    this.close()
   }
 
   /**
    * Open a modal.
    *
-   * @returns {void} - Nothing
+   * @returns {void} Nothing
    */
   open () {
     this.isClosed = false
-    this.randomSentence()
-    this.$sentence.classList.add('experience__sentence--visible')
     this.$modal.classList.add('modal--visible')
-    experience.toggle(this.experience, this.isClosed, this.$experience)
+    this.experience && this.experience.toggle(this.isClosed)
   }
 
   /**
    * Close a modal.
    *
-   * @returns {void} - Nothing
+   * @returns {void} Nothing
    */
   close () {
-    this.$button.addEventListener('click', () => {
+    const close = () => {
       this.isClosed = true
       this.$modal.classList.remove('modal--visible', 'modal--front')
-      this.$sentence.classList.remove('experience__sentence--visible')
-      experience.toggle(this.experience, this.isClosed, this.$experience)
-    })
+      this.experience && this.experience.toggle(this.isClosed)
+    }
+    this.$button.addEventListener('click', close)
   }
 
   /**
    * Move a modal.
    *
-   * @returns {void} - Nothing
+   * @returns {void} Nothing
    */
   move () {
     const offset = { x: 0, y: 0 }
 
-    this.$header.addEventListener('mousedown', e => {
-      if (e.target.className === 'modal__button') return
+    const attach = event => {
+      if (event.target.className === 'modal__button') return
       const currentFront = $('.modal--front') ? $('.modal--front') : this.$modal
-      this.selected = true
+      this.isSelected = true
       currentFront.classList.remove('modal--front')
       this.$modal.classList.add('modal--front')
-      offset.x = e.offsetX
-      offset.y = e.offsetY
-    })
+      offset.x = event.offsetX
+      offset.y = event.offsetY
+    }
 
-    window.addEventListener('mouseup', () => { this.selected = false })
-
-    window.addEventListener('mousemove', e => {
+    const drag = event => {
       const coords = {
-        x: e.clientX - offset.x,
-        y: e.clientY - offset.y
+        x: event.clientX - offset.x,
+        y: event.clientY - offset.y
       }
-      this.selected && e.preventDefault()
-      this.$modal.style.left = this.selected && coords.x + 'px'
-      this.$modal.style.top = this.selected && coords.y + 'px'
-    })
-  }
+      if (this.isSelected) {
+        event.preventDefault()
+        this.$modal.style.left = coords.x + 'px'
+        this.$modal.style.top = coords.y + 'px'
+      }
+    }
 
-  /**
-   * Choose randomly one text to display.
-   *
-   * @returns {void} - Nothing
-   */
-  randomSentence () {
-    const index = Math.floor(Math.random() * this.$$sentences.length)
-    this.$sentence = this.$$sentences[index]
+    const unattach = () => { this.isSelected = false }
+
+    this.$header.addEventListener('mousedown', attach)
+    window.addEventListener('mousemove', drag)
+    window.addEventListener('mouseup', unattach)
   }
 }
