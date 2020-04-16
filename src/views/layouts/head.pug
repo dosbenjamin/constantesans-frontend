@@ -5,12 +5,13 @@ head
   title=name
 
   meta(name='description' content=description)
-  meta(name='author' content='Benjamin Dos Santos')
+  meta(name='author' content=process.env.PROJECT_AUTHOR)
   meta(name='robots' content='index, nofollow')
 
   link(rel='stylesheet' href='../scss/main.scss')
   link(rel='canonical' href=url)
 
+  //- link(rel='icon' href='src/images/favicon.png' type='image/x-icon')
   meta(property='og:title' content=name)
   meta(property='og:description' content=description)
   meta(property='og:image' content=cover)

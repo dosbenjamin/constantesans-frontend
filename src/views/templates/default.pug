@@ -1,8 +1,10 @@
-- const url = 'https://benjamindossantos/projets/tfe'
+block setup
+  - const description = process.env.PROJECT_DESCRIPTION
+
+- const name = `${title} - ${process.env.PROJECT_NAME} [MVP]`
+- const url = process.env.PROJECT_URL
 - const coverPath = ''
 - const cover = `${url}/${coverPath}`
-
-block setup
 
 <!DOCTYPE html>
 html(lang='fr' itemscope)
