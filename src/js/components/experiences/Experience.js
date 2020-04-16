@@ -38,7 +38,19 @@ export default class {
   displaySentence () {
     const sentence = {
       index: Math.floor(Math.random() * this.$sentences.length),
+
+      /**
+       * Add the css class that display the sentence.
+       *
+       * @returns {void}
+       */
       show: () => this.$sentence.classList.add('experience__sentence--visible'),
+
+      /**
+       * Remove the css class that display the sentence.
+       *
+       * @returns {void}
+       */
       hide: () => {
         this.$sentence.classList.remove('experience__sentence--visible')
         this.$sentence = null
@@ -46,9 +58,5 @@ export default class {
     }
     this.$sentence = this.$sentence || this.$sentences[sentence.index]
     this.isClosed ? sentence.hide() : sentence.show()
-  }
-
-  setVariation () {
-    console.log('object')
   }
 }

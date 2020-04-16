@@ -4,6 +4,9 @@ import Experience from '../Experience'
  * Class representing a light experience.
  */
 export default class LightExperience extends Experience {
+  /**
+   * Initialize and manage a light experience.
+   */
   constructor () {
     super('light')
     this.state = 'off'
@@ -13,17 +16,33 @@ export default class LightExperience extends Experience {
     }
   }
 
+  /**
+   * Start the experience when the modal is opened.
+   *
+   * @returns {void} Nothing
+   */
   start () {
     this.sensor.emit('light_check', true)
     this.sensor.on('light_update', this.setVariation)
   }
 
+  /**
+   * Start the experience when the modal is opened.
+   *
+   * @returns {void} Nothing
+   */
   stop () {
     this.$values[0].textContent = ''
     this.$values[1].textContent = ''
     this.sensor.off('light_update')
   }
 
+  /**
+   * Apply style on typography and insert content inside modal on light changes.
+   *
+   * @param {boolean} state - The state of the light (on/off).
+   * @returns {void} Nothing
+   */
   setVariation (state) {
     this.state = state
     this.$values[0].textContent = this.values.content[this.state]
