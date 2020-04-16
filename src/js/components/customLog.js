@@ -1,4 +1,5 @@
-const message = 'ConstanteSans'
+require('dotenv').config()
+const message = process.env.PROJECT_NAME
 
 const style = `
   background: #524bfb;
@@ -15,7 +16,5 @@ export default {
    *
    * @returns {void} Nothing
    */
-  print () {
-    console.info(`%c${message}`, style)
-  }
+  print: () => console.info(`%c${message}`, style)
 }

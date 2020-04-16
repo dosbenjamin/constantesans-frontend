@@ -16,4 +16,12 @@ const experiences = {
   movement: () => new MovementExperience()
 }
 
-export default { create: index => experiences[index]() }
+export default {
+  /**
+   * Create new experiences.
+   *
+   * @param {string} name - The name of the experience to create.
+   * @returns {object} The experience.
+   */
+  create: name => experiences[name]()
+}

@@ -56,6 +56,12 @@ export default class Modal {
   move () {
     const offset = { x: 0, y: 0 }
 
+    /**
+     * The event when the modal header is clicked.
+     *
+     * @param {object} event - The event
+     * @returns {void} Nothing
+     */
     const attach = event => {
       if (event.target.className === 'modal__button') return
       const currentFront = $('.modal--front') ? $('.modal--front') : this.$modal
@@ -66,6 +72,12 @@ export default class Modal {
       offset.y = event.offsetY
     }
 
+    /**
+     * The event while dragging the modal.
+     *
+     * @param {object} event - The event
+     * @returns {void} Nothing
+     */
     const drag = event => {
       const coords = {
         x: event.clientX - offset.x,
@@ -78,6 +90,11 @@ export default class Modal {
       }
     }
 
+    /**
+     * The event when the click is released on the modal header.
+     *
+     * @returns {void} Nothing
+     */
     const unattach = () => { this.isSelected = false }
 
     this.$header.addEventListener('mousedown', attach)

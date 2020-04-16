@@ -42,14 +42,14 @@ export default class {
       /**
        * Add the css class that display the sentence.
        *
-       * @returns {void}
+       * @returns {void} Nothing
        */
       show: () => this.$sentence.classList.add('experience__sentence--visible'),
 
       /**
        * Remove the css class that display the sentence.
        *
-       * @returns {void}
+       * @returns {void} Nothing
        */
       hide: () => {
         this.$sentence.classList.remove('experience__sentence--visible')
