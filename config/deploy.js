@@ -7,7 +7,7 @@ const config = {
   username: process.env.FTP_USERNAME,
   password: process.env.FTP_PASSWORD,
   localDir: process.env.FTP_LOCAL_DIR,
-  remoteDir: process.env.FTP_DEV_DIR
+  remoteDir: process.env.NODE_ENV === 'development' ? process.env.FTP_DIR_STAGE : process.env.FTP_DIR_PROD
 }
 
 deploy(config)
