@@ -1,7 +1,7 @@
 {
   "name": "constante-sans-frontend",
   "version": "1.0.0",
-  "main": "src/views/index.pug",
+  "main": "src/js/main.js",
   "scripts": {
     "start": "parcel src/views/index.pug --out-dir public/ --port 8080",
     "build": "npm run lint:fix && parcel build src/views/index.pug --public-url ./ --no-source-maps --experimental-scope-hoisting --out-dir public/ --no-cache",
@@ -11,19 +11,21 @@
     "lint:js:fix": "eslint src/js/**/*.js --fix",
     "lint:scss": "stylelint 'src/scss/**/*.scss'",
     "lint:scss:fix": "stylelint 'src/scss/**/*.scss' --fix",
-    "deploy:dev": "npm run build && node config/deploy.dev.js",
-    "deploy:prod": "npm run build && node config/deploy.prod.js"
+    "deploy:stage": "npm run build && NODE_ENV=development node config/deploy.js",
+    "deploy:prod": "export NODE_ENV=production && npm run build && node config/deploy.js",
+    "clear:cache": "rm -rf .cache",
+    "clear:build": "rm -rf public"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dosbenjamin/constante-sans.git"
+    "url": "https://github.com/dosbenjamin/constante-sans-frontend.git"
   },
   "author": "Benjamin Dos Santos",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dosbenjamin/constante-sans/issues"
+    "url": "https://github.com/dosbenjamin/constante-sans-frontend/issues"
   },
-  "homepage": "https://github.com/dosbenjamin/constante-sans",
+  "homepage": "https://github.com/dosbenjamin/constante-sans-frontend",
   "dependencies": {
     "decibel-meter": "^2.0.0",
     "modularscale-sass": "^3.0.10",
@@ -32,7 +34,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.7.5",
-    "dotenv": "^8.2.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-wildcard": "^6.0.0",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.20.1",
