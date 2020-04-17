@@ -5,20 +5,24 @@ import experienceFactory from '../components/experiences/experienceFactory'
 
 const $buttons = $$('.menu .bigText')
 
+/**
+ * Builds and links a modal to its experience button.
+ *
+ * @param {object} $button - Navigation button
+ * @returns {void} Nothing
+ */
+const buildModal = $button => {
+  const { button: experience } = $button.dataset
+  const modal = new Modal(experience)
+  modal.experience = experienceFactory.create(experience)
+  $button.addEventListener('click', () => { modal.isClosed && modal.open() })
+}
+
 export default {
   /**
-   * Initialize the page.
+   * Initializes the page.
    *
    * @returns {void} Nothing
    */
-  init () {
-    customLog.print()
-
-    for (const $button of $buttons) {
-      const { button: experience } = $button.dataset
-      const modal = new Modal(experience)
-      modal.experience = experienceFactory.create(experience)
-      $button.addEventListener('click', () => { modal.isClosed && modal.open() })
-    }
-  }
+  init: () => { customLog.print(); $buttons.forEach(buildModal) }
 }
