@@ -6,7 +6,7 @@ import DecibelMeter from 'decibel-meter'
  */
 export default class SoundExperience extends Experience {
   /**
-   * Initialize and manage a sound experience.
+   * Initializes and manages a sound experience.
    */
   constructor () {
     super('sound')
@@ -17,21 +17,21 @@ export default class SoundExperience extends Experience {
   }
 
   /**
-   * Start the experience when the modal is opened.
+   * Starts the experience when the modal is opened.
    *
    * @returns {void} Nothing
    */
   start () { this.sensor.listen() }
 
   /**
-   * Stop the experience when the modal is closed.
+   * Stops the experience when the modal is closed.
    *
    * @returns {void} Nothing
    */
   stop () { this.sensor.stopListening() }
 
   /**
-   * Apply style on typography and insert content inside modal on sound changes.
+   * Applies typography style and inserts values inside modal on sound changes.
    *
    * @param {number} dB - The sound power in decibel.
    * @param {number} percent - The sound power in percentage.

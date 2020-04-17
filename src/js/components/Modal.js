@@ -5,11 +5,11 @@ import { $ } from '../utils/selectors'
 // TODO: Resize de la fenêtre.
 
 /**
- * Class representing a modal that are used to display each experience.
+ * Class representing a modal.
  */
 export default class Modal {
   /**
-   * Initialize and manage a modal.
+   * Initializes and manages a modal.
    *
    * @param {string} name - The name of the modal.
    */
@@ -24,7 +24,7 @@ export default class Modal {
   }
 
   /**
-   * Open a modal.
+   * Opens a modal.
    *
    * @returns {void} Nothing
    */
@@ -35,7 +35,7 @@ export default class Modal {
   }
 
   /**
-   * Close a modal.
+   * Closes a modal.
    *
    * @returns {void} Nothing
    */
@@ -49,7 +49,7 @@ export default class Modal {
   }
 
   /**
-   * Move a modal.
+   * Moves a modal.
    *
    * @returns {void} Nothing
    */
@@ -57,7 +57,7 @@ export default class Modal {
     const offset = { x: 0, y: 0 }
 
     /**
-     * The event when the modal header is clicked.
+     * Event when the modal header is clicked.
      *
      * @param {object} event - The event
      * @returns {void} Nothing
@@ -73,7 +73,7 @@ export default class Modal {
     }
 
     /**
-     * The event while dragging the modal.
+     * Event while dragging the modal.
      *
      * @param {object} event - The event
      * @returns {void} Nothing
@@ -91,7 +91,7 @@ export default class Modal {
     }
 
     /**
-     * The event when the click is released on the modal header.
+     * Event when the click is released on the modal header.
      *
      * @returns {void} Nothing
      */

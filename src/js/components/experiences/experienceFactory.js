@@ -18,7 +18,7 @@ const experiences = {
 
 export default {
   /**
-   * Create new experiences.
+   * Creates new experience.
    *
    * @param {string} name - The name of the experience to create.
    * @returns {object} The experience.

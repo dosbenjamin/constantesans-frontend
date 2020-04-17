@@ -12,7 +12,7 @@ const style = `
 
 export default {
   /**
-   * Print the name of this project in the console.
+   * Prints the name of this project in the console.
    *
    * @returns {void} Nothing
    */

@@ -6,7 +6,7 @@ import { rpi } from '../../utils/socketConfig'
  */
 export default class {
   /**
-   * Initialize and manage an experience.
+   * Initializes and manages an experience.
    *
    * @param {string} name - The name of the experience.
    */
@@ -19,7 +19,7 @@ export default class {
   }
 
   /**
-   * Start or stop the experience depending on the modal state.
+   * Starts or stops the experience depending on the modal state.
    *
    * @param {boolean} isClosed - The state of the modal (opened/closed).
    * @returns {void} Nothing
@@ -31,7 +31,28 @@ export default class {
   }
 
   /**
-   * Choose randomly one sentence to display.
+   * Starts the experience when the modal is opened.
+   *
+   * @returns {void} Nothing
+   */
+  start () {}
+
+  /**
+   * Stops the experience when the modal is closed.
+   *
+   * @returns {void} Nothing
+   */
+  stop () {}
+
+  /**
+   * Applies typography style and inserts values inside modal on changes.
+   *
+   * @returns {void} Nothing
+   */
+  setVariation () {}
+
+  /**
+   * Chooses randomly one sentence to display.
    *
    * @returns {void} Nothing
    */
@@ -40,14 +61,14 @@ export default class {
       index: Math.floor(Math.random() * this.$sentences.length),
 
       /**
-       * Add the css class that display the sentence.
+       * Adds the css class that display the sentence.
        *
        * @returns {void} Nothing
        */
       show: () => this.$sentence.classList.add('experience__sentence--visible'),
 
       /**
-       * Remove the css class that display the sentence.
+       * Removes the css class that display the sentence.
        *
        * @returns {void} Nothing
        */

@@ -6,7 +6,7 @@ const { namespace } = document.body.dataset
 const pages = { home: () => home.init() }
 
 /**
- * Load the right page.
+ * Loads the current page.
  *
  * @param {string} current - The name of the current page.
  * @returns {void} Nothing

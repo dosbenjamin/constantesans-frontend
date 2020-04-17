@@ -5,7 +5,7 @@ import Experience from '../Experience'
  */
 export default class LightExperience extends Experience {
   /**
-   * Initialize and manage a light experience.
+   * Initializes and manages a light experience.
    */
   constructor () {
     super('light')
@@ -17,7 +17,7 @@ export default class LightExperience extends Experience {
   }
 
   /**
-   * Start the experience when the modal is opened.
+   * Starts the experience when the modal is opened.
    *
    * @returns {void} Nothing
    */
@@ -27,7 +27,7 @@ export default class LightExperience extends Experience {
   }
 
   /**
-   * Start the experience when the modal is opened.
+   * Starts the experience when the modal is opened.
    *
    * @returns {void} Nothing
    */
@@ -38,7 +38,7 @@ export default class LightExperience extends Experience {
   }
 
   /**
-   * Apply style on typography and insert content inside modal on light changes.
+   * Applies typography style and inserts values inside modal on light changes.
    *
    * @param {boolean} state - The state of the light (on/off).
    * @returns {void} Nothing
