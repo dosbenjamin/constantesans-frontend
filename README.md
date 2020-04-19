@@ -1,2 +1,3 @@
 # constante-sans-frontend
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/7c6f9fea444f44d8ba6b85ee4aa2279b)](https://app.codacy.com/manual/dosbenjamin/constante-sans-frontend?utm_source=github.com&utm_medium=referral&utm_content=dosbenjamin/constante-sans-frontend&utm_campaign=Badge_Grade_Dashboard)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7c6f9fea444f44d8ba6b85ee4aa2279b)](https://app.codacy.com/manual/dosbenjamin/constante-sans-frontend?utm_source=github.com&utm_medium=referral&utm_content=dosbenjamin/constante-sans-frontend&utm_campaign=Badge_Grade_Dashboard)
