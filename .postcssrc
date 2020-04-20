@@ -1,7 +1,0 @@
-{
-  "plugins": {
-    "autoprefixer": {},
-    "postcss-zindex": {},
-    "postcss-sort-media-queries": {}
-  }
-}
