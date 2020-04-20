@@ -1,18 +1,13 @@
-.section {
+.l-container {
   width: 100vw;
-  display: flex;
+  height: 60vh;
 
-  &--header {
-    align-items: center;
-    justify-content: space-between;
-    background: $cGradient;
+  &--bottom {
+    height: 40vh;
+    display: flex;
   }
 
-  &--content {
-    flex-direction: column;
-    justify-content: center;
-    height: calc(100vh - #{units(6)} - 3px);
-    background: $cGrey;
-    padding: units(4);
+  &__padded {
+    padding: units(1) units(4);
   }
 }

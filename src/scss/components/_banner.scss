@@ -1,17 +1,36 @@
-.banner {
-  display: flex;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  font-size: units(1);
-  padding: units(0.5) 0;
+// .banner {
+//   display: flex;
+//   top: 0;
+//   left: 0;
+//   width: 100vw;
+//   font-size: units(1);
+//   padding: units(0.5) 0;
+//   font-family: 'ETC Trispace Variable', sans-serif;
+//   font-variation-settings: 'wght' 900, 'wdth' 150;
+//   white-space: nowrap;
+
+//   &__item {
+//     &:first-child,
+//     &:nth-child(2) {
+//       &::after {
+//         content: '→';
+//         margin: 0 0.5rem;
+//       }
+//     }
+//   }
+// }
+
+.c-banner {
   font-family: 'ETC Trispace Variable', sans-serif;
-  font-variation-settings: 'wght' 900, 'wdth' 150;
   white-space: nowrap;
+  font-size: ms(-1);
+  overflow: hidden;
+  height: 10%;
 
   &__item {
-    &:first-child,
-    &:nth-child(2) {
+    display: inline-block;
+
+    &:not(:last-child) {
       &::after {
         content: '→';
         margin: 0 0.5rem;

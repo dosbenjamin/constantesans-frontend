@@ -1,3 +1,21 @@
 $cGrey: #dbdbdb;
 $cGradient: linear-gradient(193.66deg, #0048fc -47.35%, #524bfb 89.39%);
 $cPurple: #514bfb;
+
+$cDarkGrey: #1b1d1c;
+$cRed: #ff4552;
+$cEgg: #efe8d8;
+
+.t-darkGrey {
+  background-color: $cDarkGrey;
+  color: #fff;
+}
+
+.t-red {
+  background-color: $cRed;
+  color: #fff;
+}
+
+.t-egg {
+  background-color: $cEgg;
+}

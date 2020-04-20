@@ -1,0 +1,30 @@
+.c-nav {
+  width: 40%;
+  font-size: ms(-1);
+  flex-wrap: wrap;
+  text-align: right;
+  justify-content: flex-end;
+  padding: 0;
+
+  &__list {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: darken($cRed, 5%);
+    }
+
+    button {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

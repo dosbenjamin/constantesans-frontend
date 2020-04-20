@@ -1,0 +1,18 @@
+.c-hero {
+  font-size: ms(2);
+  height: 90%;
+
+  &__content {
+    max-width: 15em;
+  }
+}
+
+.u-center {
+  display: flex;
+  align-items: center;
+}
+
+.u-bottom {
+  display: flex;
+  align-items: flex-end;
+}

@@ -1,13 +1,13 @@
+@function units($value) {
+  @return calc(var(--vertical) * #{$value});
+}
+
 $modularscale: (
   base: 1em,
   ratio: 1.333
 );
 
-@function units($value) {
-  @return calc(var(--vertical) * #{$value});
-}
-
-$fontSize: 2vmax;
+$fontSize: 3vmin;
 
 :root {
   --vertical: calc((1.4 * #{$fontSize}) / 2);
@@ -28,11 +28,7 @@ body {
 
 p {
   max-width: 30em;
-  margin-bottom: var(--vertical);
-
-  // &:not(:last-of-type) {
-  //   margin-bottom: var(--vertical);
-  // }
+  margin: 0;
 }
 
 .bold {
