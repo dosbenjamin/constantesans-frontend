@@ -1,5 +1,4 @@
-require('dotenv').config()
-const message = process.env.PROJECT_NAME
+const message = 'ConstanteSans'
 
 const style = `
   background: #524bfb;

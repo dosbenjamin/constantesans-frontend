@@ -1,8 +1,9 @@
 block setup
-  - const description = process.env.PROJECT_DESCRIPTION
+  - const description = 'TFE'
 
-- const name = `${title} - ${process.env.PROJECT_NAME} [MVP]`
-- const url = process.env.PROJECT_URL
+- const projectName = 'ConstanteSans'
+- const name = `${title} - ${projectName} [Beta]`
+- const url = 'https://constantesans.benjamindossantos.be'
 - const coverPath = ''
 - const cover = `${url}/${coverPath}`
 
@@ -15,8 +16,6 @@ html(lang='fr' itemscope)
     block header
 
     main
-      //- block content
-
       block modalArea
         each content, id in modals
           include ../components/modal/modal.pug

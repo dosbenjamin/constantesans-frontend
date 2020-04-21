@@ -1,15 +1,13 @@
-require('dotenv').config()
-
 module.exports = {
   plugins: {
     'posthtml-favicons': {
-      outDir: process.env.FTP_LOCAL_DIR,
+      outDir: 'public',
       configuration: {
         path: './',
-        appName: process.env.PROJECT_NAME,
-        appDescription: process.env.PROJECT_DESCRIPTION,
-        developerName: process.env.PROJECT_AUTHOR,
-        developerURL: process.env.PROJECT_AUTHOR_URL,
+        appName: 'ConstanteSans',
+        appDescription: 'TFE',
+        developerName: 'Benjamin Dos Santos',
+        developerURL: 'https://benjamindossantos.be',
         dir: 'auto',
         lang: 'fr-FR',
         background: '#fff',
