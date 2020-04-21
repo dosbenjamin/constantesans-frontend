@@ -1,18 +1,16 @@
 {
   "name": "constante-sans-frontend",
   "version": "1.0.0",
-  "main": "src/js/main.js",
+  "main": "src/views/index.pug",
   "scripts": {
     "start": "parcel src/views/index.pug --out-dir public/ --port 3000",
-    "build": "npm run lint:fix && parcel build src/views/index.pug --public-url ./ --out-dir public/ --no-source-maps --no-cache",
+    "build": "parcel build src/views/index.pug --public-url ./ --out-dir public/ --no-source-maps --no-cache",
     "lint": "npm-run-all -p lint:js lint:scss",
     "lint:fix": "npm-run-all -p lint:js:fix lint:scss:fix",
     "lint:js": "eslint src/js/**/*.js",
     "lint:js:fix": "eslint src/js/**/*.js --fix",
     "lint:scss": "stylelint 'src/scss/**/*.scss'",
     "lint:scss:fix": "stylelint 'src/scss/**/*.scss' --fix",
-    "deploy:stage": "npm run build && NODE_ENV=development node config/deploy.js",
-    "deploy:prod": "export NODE_ENV=production && npm run build && node config/deploy.js",
     "clear:cache": "rm -rf .cache",
     "clear:build": "rm -rf public"
   },
@@ -22,9 +20,6 @@
   },
   "author": "Benjamin Dos Santos",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/dosbenjamin/constante-sans-frontend/issues"
-  },
   "homepage": "https://github.com/dosbenjamin/constante-sans-frontend",
   "dependencies": {
     "decibel-meter": "^2.0.0",
@@ -60,7 +55,6 @@
     "posthtml-link-noreferrer": "^1.0.6",
     "pug": "^2.0.4",
     "sass": "^1.26.3",
-    "sftp-sync-deploy": "^0.7.1",
     "stylelint": "^13.2.1",
     "stylelint-config-standard": "^20.0.0"
   },
