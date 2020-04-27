@@ -1,0 +1,7 @@
+nav(class='l-container__padded c-nav t-red u-bottom'): ul(class='c-nav__list')
+
+    each button, id in sections
+      li(class='c-nav__item')
+
+        - const attribute = `date-button-${id}`
+        button(class='bigText')&attributes({[attribute]: ''})=button.name

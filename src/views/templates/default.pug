@@ -1,4 +1,4 @@
-block setup
+block config
   - const description = 'TFE'
 
 - const projectName = 'ConstanteSans'
@@ -10,14 +10,16 @@ block setup
 <!DOCTYPE html>
 html(lang='fr' itemscope)
 
-  include ../layouts/head.pug
+  include ../layouts/head
 
   body(data-namespace=page)
+
     block header
 
     main
-      block modalArea
-        each content, id in modals
-          include ../components/modal/modal.pug
+      block modalsArea
+
+        each modal, id in sections
+          include ../layouts/modal
 
     block footer

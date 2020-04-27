@@ -1,0 +1,17 @@
+- const attribute = `data-modal-${id}`
+
+section(class='modal')&attributes({[attribute]: ''})
+
+  div(class='modal__header')
+    h2(class='bigText')=modal.name
+    button(class='modal__button') close
+
+  div(class=`experience experience--${id}`)
+    each sentence in modal.sentences
+      p(class='experience__sentence')=sentence
+
+  if hasExperiences
+    div(class='modal__footer'): ul(class='modal__list')
+        each value, label in modal.rawValues
+          li(class='modal__item')= label
+            span=value

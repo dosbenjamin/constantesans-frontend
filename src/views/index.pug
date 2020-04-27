@@ -1,23 +1,15 @@
-extends templates/default.pug
+extends templates/default
 
-append setup
+append config
   - const page = 'home'
   - const title = 'Lab'
-  -
-    const modals = {
-      light: 'Luminosité',
-      sound: 'Sonorité',
-      movement: 'Mouvement',
-      temperature: 'Température',
-      pressure: 'Pression',
-      touch: 'Touché'
-    }
+  - const sections = experiences
 
 block header
-  include layouts/home/header.pug
+  include layouts/home/header
 
-prepend modalArea
-  - const experience = true
+prepend modalsArea
+  - const hasExperiences = true
 
 block footer
-  include layouts/home/footer.pug
+  include layouts/home/footer
