@@ -1,4 +1,4 @@
-import { $ } from '../utils/selectors'
+import { $ } from '../helpers/DOMSelectors'
 
 // TODO: Garder la position en z-index de chaque fenêtre.
 // TODO: z-index le plus haut lors de l'affiche.
@@ -30,7 +30,7 @@ export default class Modal {
    */
   open () {
     this.isClosed = false
-    this.$modal.classList.add('modal--visible')
+    this.$modal.classList.add('is-visible')
     this.experience && this.experience.toggle(this.isClosed)
   }
 
@@ -42,7 +42,7 @@ export default class Modal {
   close () {
     const close = () => {
       this.isClosed = true
-      this.$modal.classList.remove('modal--visible', 'modal--front')
+      this.$modal.classList.remove('is-visible', 'modal--front')
       this.experience && this.experience.toggle(this.isClosed)
     }
     this.$button.addEventListener('click', close)

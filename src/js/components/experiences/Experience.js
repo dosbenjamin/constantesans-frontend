@@ -1,5 +1,5 @@
-import { $, $$ } from '../../utils/selectors'
-import { rpi } from '../../utils/socketConfig'
+import { $, $$ } from '../../helpers/DOMSelectors'
+import { RPi } from '../../helpers/raspberry'
 
 /**
  * Class representing an abstract experience.
@@ -12,7 +12,7 @@ export default class {
    */
   constructor (name) {
     this.name = name
-    this.sensor = rpi
+    this.sensor = RPi
     this.$experience = $(`.experience--${this.name}`)
     this.$sentences = $$('.experience__sentence', this.$experience)
     this.$values = $$(`[data-modal-${this.name}] span`)

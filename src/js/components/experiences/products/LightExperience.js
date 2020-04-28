@@ -9,6 +9,7 @@ export default class LightExperience extends Experience {
    */
   constructor () {
     super('light')
+
     this.state = 'off'
     this.values = {
       content: { on: 'allumée', off: 'éteinte' },
@@ -22,7 +23,7 @@ export default class LightExperience extends Experience {
    * @returns {void} Nothing
    */
   start () {
-    this.sensor.emit('light_check', true)
+    this.sensor.emit('light_check')
     this.sensor.on('light_update', this.setVariation)
   }
 
