@@ -7,7 +7,7 @@ $modularscale: (
   ratio: 1.333
 );
 
-$fontSize: 3vmin;
+$fontSize: 3.5vmin;
 
 :root {
   --vertical: calc((1.4 * #{$fontSize}) / 2);
@@ -24,13 +24,4 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: antialiased;
   line-height: 1.4;
-}
-
-p {
-  max-width: 30em;
-  margin: 0;
-}
-
-.bold {
-  font-variation-settings: 'wght' 500;
 }

@@ -1,0 +1,27 @@
+.l-container {
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.l-container--bottom {
+  flex-direction: row;
+  height: 40vh;
+}
+
+.l-container__item {
+  flex-grow: 1;
+  padding: units(1) units(4);
+}
+
+.l-container__item--banner {
+  flex-grow: 0;
+  padding: units(0.5) 0;
+}
+
+.l-container__item--nav {
+  flex-grow: 3;
+  padding: units(2) units(4);
+  // max-width: 640px;
+}

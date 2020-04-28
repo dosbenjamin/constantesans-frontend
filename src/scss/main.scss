@@ -1,26 +1,31 @@
 @charset 'utf-8';
 
 // Dependencies
-@import 'sanitize.css';
 @import '~modularscale-sass';
 
 // Settings
-@import './settings/resets';
+@import './settings/reset';
 @import './settings/fonts';
 @import './settings/typography';
-@import './settings/colors';
+@import './settings/color';
 
-// Tools
-@import './helpers/pseudo';
-@import './helpers/hide-text';
+// Helpers
+@import './utils/position';
+@import './utils/text';
+
+// Layouts
+@import './layouts/container';
 
 // Components
-@import './components/big-text';
-@import './components/section';
-@import './components/logo';
-@import './components/nav';
-@import './components/modal';
-@import './components/experience';
 @import './components/hero';
 @import './components/banner';
 @import './components/about';
+@import './components/navigation';
+
+// qsdqsd
+@import './utils/pseudo';
+@import './utils/hide-text';
+
+// qsdq
+@import './components/modal';
+@import './components/experience';

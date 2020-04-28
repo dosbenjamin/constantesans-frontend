@@ -1,21 +1,17 @@
-$border: 3px solid $cPurple;
-$modals: 6;
-
-.modal {
+.c-modal {
   position: absolute;
-  border: $border;
   width: 35vmax;
   background-color: #fff;
   box-shadow: 0 10px 23px rgba(0, 0, 0, 0.25);
   display: none;
 
-  @for $i from 0 through $modals {
-    $value: (20 + $i);
-    &:nth-last-child(#{$i}) {
-      top: $value + vh;
-      left: $value + vw;
-    }
-  }
+  // @for $i from 0 through $modals {
+  //   $value: (20 + $i);
+  //   &:nth-last-child(#{$i}) {
+  //     top: $value + vh;
+  //     left: $value + vw;
+  //   }
+  // }
 
   &--visible {
     display: block;
@@ -28,8 +24,8 @@ $modals: 6;
   &__header {
     display: flex;
     justify-content: space-between;
-    background: $cGradient;
-    border-bottom: $border;
+    // background: $cGradient;
+    // border-bottom: $border;
     padding: units(0.75) var(--vertical);
     cursor: move;
   }
@@ -70,7 +66,7 @@ $modals: 6;
   }
 
   &__footer {
-    border-top: $border;
+    // border-top: $border;
     width: 100%;
     color: #fff;
     background-color: #000;
@@ -87,7 +83,7 @@ $modals: 6;
     font-size: ms(-2);
 
     &:not(:last-child) {
-      border-right: $border;
+      // border-right: $border;
     }
   }
 }

@@ -1,17 +1,17 @@
 - const attribute = `data-modal-${id}`
 
-section(class='modal')&attributes({[attribute]: ''})
+section(class='c-modal')&attributes({[attribute]: ''})
 
-  div(class='modal__header')
-    h2(class='bigText')=modal.name
-    button(class='modal__button') close
+  div(class='c-modal__header')
+    h2(class='u-bigText')=modal.name
+    button(class='c-modal__button') close
 
-  div(class=`experience experience--${id}`)
+  div(class=`c-experience c-experience--${id}`)
     each sentence in modal.sentences
-      p(class='experience__sentence')=sentence
+      p(class='c-experience__sentence')=sentence
 
   if hasExperiences
-    div(class='modal__footer'): ul(class='modal__list')
+    div(class='c-modal__footer'): ul(class='c-modal__list')
         each value, label in modal.rawValues
-          li(class='modal__item')= label
+          li(class='c-modal__item')= label
             span=value

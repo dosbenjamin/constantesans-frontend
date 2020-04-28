@@ -1,4 +1,4 @@
-.bigText {
+.u-bigText {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: normal;
   font-size: ms(-1);
@@ -6,4 +6,8 @@
   text-transform: lowercase;
   line-height: var(--vertical);
   color: #fff;
+}
+
+.u-bold {
+  font-variation-settings: 'wght' 500;
 }
