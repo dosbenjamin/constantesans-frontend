@@ -4,86 +4,52 @@
   background-color: #fff;
   box-shadow: 0 10px 23px rgba(0, 0, 0, 0.25);
   display: none;
+  border: 3px solid #fff;
+}
 
-  // @for $i from 0 through $modals {
-  //   $value: (20 + $i);
-  //   &:nth-last-child(#{$i}) {
-  //     top: $value + vh;
-  //     left: $value + vw;
-  //   }
-  // }
+.c-modal__header {
+  justify-content: space-between;
+  padding: units(0.5) var(--vertical);
+  cursor: move;
 
-  &--visible {
-    display: block;
-  }
-
-  &--front {
-    z-index: 999;
-  }
-
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    // background: $cGradient;
-    // border-bottom: $border;
-    padding: units(0.75) var(--vertical);
-    cursor: move;
-  }
-
-  .bigText {
+  .u-bigText {
     margin: 0;
     pointer-events: none;
   }
+}
 
-  &__button {
-    @include hideText;
+.c-modal__button {
+  height: var(--vertical);
+  width: var(--vertical);
+  position: relative;
 
+  &::before,
+  &::after {
     height: var(--vertical);
-    width: var(--vertical);
-    position: relative;
-
-    &::before,
-    &::after {
-      @include pseudo;
-
-      height: var(--vertical);
-      width: 3px;
-      background-color: #fff;
-      left: 50%;
-    }
-
-    &::before {
-      transform: translateX(-50%) rotate(45deg);
-    }
-
-    &::after {
-      transform: translateX(-50%) rotate(-45deg);
-    }
+    width: 3px;
+    background-color: #fff;
+    left: 50%;
   }
 
-  &__content {
-    padding: units(1.2);
+  &::before {
+    transform: translateX(-50%) rotate(45deg);
   }
 
-  &__footer {
-    // border-top: $border;
-    width: 100%;
-    color: #fff;
-    background-color: #000;
+  &::after {
+    transform: translateX(-50%) rotate(-45deg);
   }
+}
 
-  &__list {
-    display: flex;
-  }
+.c-modal__footer {
+  width: 100%;
+  color: #fff;
+  background-color: #000;
+  display: flex;
+}
 
-  &__item {
-    line-height: var(--vertical);
-    width: 50%;
-    padding: units(0.5) var(--vertical);
-    font-size: ms(-2);
-
-    &:not(:last-child) {
-      // border-right: $border;
-    }
-  }
+.c-modal__value {
+  line-height: var(--vertical);
+  width: 50%;
+  padding: units(0.5) var(--vertical);
+  font-size: ms(-2);
 }

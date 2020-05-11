@@ -4,15 +4,32 @@
   justify-content: space-between;
   align-items: flex-end;
   height: 100%;
+}
 
-  &__item {
-    &:nth-child(1),
-    &:nth-child(5) {
-      align-self: flex-start;
-    }
+.c-nav__item {
+  line-height: var(--vertical);
+}
 
-    &:nth-child(2) {
-      align-self: center;
-    }
+/* purgecss start ignore */
+
+button {
+  &[data-button-light] {
+  }
+
+  &[data-button-movement] {
+  }
+
+  &[data-button-pressure] {
+  }
+
+  &[data-button-sound] {
+  }
+
+  &[data-button-temperature] {
+  }
+
+  &[data-button-touch] {
   }
 }
+
+/* purgecss end ignore */

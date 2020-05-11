@@ -7,10 +7,10 @@
 @import './settings/reset';
 @import './settings/fonts';
 @import './settings/typography';
-@import './settings/color';
+@import './settings/colors';
 
 // Helpers
-@import './utils/position';
+@import './utils/display';
 @import './utils/text';
 
 // Layouts
@@ -21,11 +21,8 @@
 @import './components/banner';
 @import './components/about';
 @import './components/navigation';
-
-// qsdqsd
-@import './utils/pseudo';
-@import './utils/hide-text';
-
-// qsdq
 @import './components/modal';
 @import './components/experience';
+
+// Others
+@import './others/states'

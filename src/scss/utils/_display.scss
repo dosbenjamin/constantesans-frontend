@@ -1,0 +1,14 @@
+.u-emptyPseudo {
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+  }
+}
+
+.u-verticalCenter {
+  display: flex;
+  align-items: center;
+}

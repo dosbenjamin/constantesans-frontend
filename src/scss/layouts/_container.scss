@@ -1,5 +1,4 @@
 .l-container {
-  width: 100vw;
   height: 60vh;
   display: flex;
   flex-direction: column;
@@ -12,7 +11,7 @@
 
 .l-container__item {
   flex-grow: 1;
-  padding: units(1) units(4);
+  padding: units(2) units(5);
 }
 
 .l-container__item--banner {
@@ -21,7 +20,6 @@
 }
 
 .l-container__item--nav {
-  flex-grow: 3;
-  padding: units(2) units(4);
-  // max-width: 640px;
+  padding: units(2) units(5);
+  max-width: units(22);
 }

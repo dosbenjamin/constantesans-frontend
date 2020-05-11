@@ -2,16 +2,16 @@
 
 section(class='c-modal')&attributes({[attribute]: ''})
 
-  div(class='c-modal__header')
+  div(class='c-modal__header u-verticalCenter t-red')
     h2(class='u-bigText')=modal.name
-    button(class='c-modal__button') close
+    button(class='c-modal__button u-hideText u-emptyPseudo') close
 
-  div(class=`c-experience c-experience--${id}`)
+  ul(class=`c-experience c-experience--${id}`)
     each sentence in modal.sentences
-      p(class='c-experience__sentence')=sentence
+      li(class='c-experience__sentence')=sentence
 
   if hasExperiences
-    div(class='c-modal__footer'): ul(class='c-modal__list')
-        each value, label in modal.rawValues
-          li(class='c-modal__item')= label
-            span=value
+    ul(class='c-modal__footer')
+      each value, label in modal.rawValues
+        li(class='c-modal__value')= `${label}\u00A0:\u00A0`
+          span=value

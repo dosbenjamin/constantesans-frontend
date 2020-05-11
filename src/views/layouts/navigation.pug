@@ -1,7 +1,7 @@
 nav(class='l-container__item l-container__item--nav t-red'): ul(class='c-nav')
 
-    each button, id in sections
-      li(class=`c-nav__item c-nav__item--${id}`)
+  each button, id in sections
+    li.c-nav__item
 
-        - const attribute = `data-button-${id}`
-        button(class='u-bigText')&attributes({[attribute]: ''})=button.name
+      - const attribute = `data-button-${id}`
+      button(class='u-bigText')&attributes({[attribute]: ''})=button.name
