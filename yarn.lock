@@ -6766,10 +6766,10 @@ parcel-bundler@^1.10.3, parcel-bundler@^1.12.4:
     v8-compile-cache "^2.0.0"
     ws "^5.1.1"
 
-parcel-plugin-clean@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/parcel-plugin-clean/-/parcel-plugin-clean-1.1.0.tgz#482905f9cc19048b0214a9c7bb0e1b58da13d76b"
-  integrity sha512-Hp25RBuYKpLewqgxbieCZkU/tKgGlmK9ZA0+uuYE/IeC4OvUuh2Tr9gufDgzuigTTxzH3t8NGr6oYyi72CUwAA==
+parcel-plugin-clean-dist@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/parcel-plugin-clean-dist/-/parcel-plugin-clean-dist-0.0.6.tgz#e3da68aaadc19b258c111fc114fe68e7866bf4fb"
+  integrity sha512-zzPY/ORCzkV+V7nfyYlONLrBithrx6orJjepdBoqqb9myeV9zQZUoBY41i3QkSSnQX7ilGmWDALX2XlxC6z7Fw==
 
 parcel-plugin-compression@dosbenjamin/parcel-plugin-compression:
   version "0.1.0"
