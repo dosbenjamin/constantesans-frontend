@@ -11,7 +11,7 @@ const style = `
 
 export default {
   /**
-   * Prints the name of this project in the console.
+   * Print the name of this project in the console.
    *
    * @returns {void} Nothing
    */

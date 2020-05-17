@@ -7,7 +7,7 @@ import experiencesData from '../../data/experiences.json'
 const experiences = Object.keys(experiencesData)
 
 /**
- * Builds and links a modal to its experience button.
+ * Build and link a modal to its experience button.
  *
  * @param {string} experience  - none
  * @returns {void} Nothing
@@ -20,7 +20,7 @@ const buildModal = experience => {
 
 export default {
   /**
-   * Initializes the page.
+   * Initialize the page.
    *
    * @returns {void} Nothing
    */
