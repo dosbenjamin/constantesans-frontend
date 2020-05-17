@@ -27,8 +27,10 @@
     "socket.io-client": "^2.3.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.9.6",
     "@fullhuman/postcss-purgecss": "^2.1.2",
-    "babel-core": "^6.26.3",
     "babel-plugin-wildcard": "^6.0.0",
     "css-declaration-sorter": "^5.1.2",
     "cssnano-preset-advanced": "^4.0.7",

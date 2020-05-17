@@ -1,3 +1,4 @@
 module.exports = {
-  plugins: ['wildcard']
+  presets: ['@babel/preset-env'],
+  plugins: ['wildcard', '@babel/plugin-proposal-class-properties']
 }
