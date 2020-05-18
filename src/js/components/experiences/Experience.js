@@ -4,22 +4,23 @@ import { RPi } from '../../helpers/raspberry'
 /**
  * Class representing an abstract experience.
  */
-export default class {
+export default class Experience {
+  static sensors = RPi
+
   /**
-   * Initializes and manages an experience.
+   * Initialize and manage an experience.
    *
    * @param {string} name - The name of the experience.
    */
   constructor (name) {
     this.name = name
-    this.sensor = RPi
-    this.$experience = $(`.experience--${this.name}`)
-    this.$sentences = $$('.experience__sentence', this.$experience)
-    this.$values = $$(`[data-modal-${this.name}] span`)
+    this.$experience = $(`.c-experience--${this.name}`)
+    this.$sentences = $$('.c-experience__sentence', this.$experience)
+    this.$values = $$(`[data-modal-${this.name}] .js-value`)
   }
 
   /**
-   * Starts or stops the experience depending on the modal state.
+   * Start or stop the experience depending on the modal state.
    *
    * @param {boolean} isClosed - The state of the modal (opened/closed).
    * @returns {void} Nothing
@@ -31,28 +32,28 @@ export default class {
   }
 
   /**
-   * Starts the experience when the modal is opened.
+   * Start the experience when the modal is opened.
    *
    * @returns {void} Nothing
    */
   start () {}
 
   /**
-   * Stops the experience when the modal is closed.
+   * Stop the experience when the modal is closed.
    *
    * @returns {void} Nothing
    */
   stop () {}
 
   /**
-   * Applies typography style and inserts values inside modal on changes.
+   * Apply typography style and insert values inside modal on changes.
    *
    * @returns {void} Nothing
    */
   setVariation () {}
 
   /**
-   * Chooses randomly one sentence to display.
+   * Choose randomly one sentence to display.
    *
    * @returns {void} Nothing
    */
@@ -61,19 +62,19 @@ export default class {
       index: Math.floor(Math.random() * this.$sentences.length),
 
       /**
-       * Adds the css class that display the sentence.
+       * Add the css class that display the sentence.
        *
        * @returns {void} Nothing
        */
-      show: () => this.$sentence.classList.add('experience__sentence--visible'),
+      show: () => this.$sentence.classList.add('is-visible'),
 
       /**
-       * Removes the css class that display the sentence.
+       * Remove the css class that display the sentence.
        *
        * @returns {void} Nothing
        */
       hide: () => {
-        this.$sentence.classList.remove('experience__sentence--visible')
+        this.$sentence.classList.remove('is-visible')
         this.$sentence = null
       }
     }

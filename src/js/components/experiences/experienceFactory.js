@@ -1,24 +1,24 @@
 import {
-  SoundExperience,
+  HumidityExperience,
   LightExperience,
+  MovementExperience,
   TemperatureExperience,
-  PressureExperience,
-  TouchExperience,
-  MovementExperience
+  VibrationExperience,
+  SoundExperience
 } from './products/*'
 
 const experiences = {
-  sound: () => new SoundExperience(),
+  humidity: () => new HumidityExperience(),
   light: () => new LightExperience(),
+  movement: () => new MovementExperience(),
   temperature: () => new TemperatureExperience(),
-  pressure: () => new PressureExperience(),
-  touch: () => new TouchExperience(),
-  movement: () => new MovementExperience()
+  vibration: () => new VibrationExperience(),
+  sound: () => new SoundExperience()
 }
 
 export default {
   /**
-   * Creates new experience.
+   * Create new experience.
    *
    * @param {string} name - The name of the experience to create.
    * @returns {object} The experience.
