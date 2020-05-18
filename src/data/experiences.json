@@ -1,4 +1,16 @@
 {
+  "humidity": {
+    "name": "Humidité",
+    "sentences": [
+      "Impacter le visuel d'une interface numérique par un simple touché.",
+      "Impacter le visuel d'une interface numérique par un simple touché.",
+      "Impacter le visuel d'une interface numérique par un simple touché"
+    ],
+    "rawValues": {
+      "Humidité": "0°",
+      "Taille": "0"
+    }
+  },
   "light": {
     "name": "Luminosité",
     "sentences": [
@@ -7,40 +19,57 @@
       "Être plongé dans l'ambiance lumineuse environnante."
     ],
     "rawValues": {
-      "Lumière": "allumée",
-      "Graisse": 0
+      "État": "allumée",
+      "Graisse": 200
     }
   },
   "movement": {
     "name": "Mouvement",
-    "sentences": [],
-    "rawValues": {}
-  },
-  "pressure": {
-    "name": "Pression",
-    "sentences": [],
-    "rawValues": {}
-  },
-  "sound": {
-    "name": "Sonorité",
     "sentences": [
-      "Visualiser les vibrations acoustiques, la relation entre entendre et voir.",
-      "Visualiser les vibrations acoustiques, la relation entre entendre et voir.",
-      "Visualiser les vibrations acoustiques, la relation entre entendre et voir."
+      "Digitaliser des expressions corporelles.",
+      "Être plongé dans l'ambiance lumineuse environnante.",
+      "Être plongé dans l'ambiance lumineuse environnante."
     ],
     "rawValues": {
-      "Décibels": "0dB",
-      "Graisse": 0
+      "Mouvements": "Aucun",
+      "Graisse": "0"
+    }
+  },
+  "vibration": {
+    "name": "Vibration",
+    "sentences": [
+      "Percevoir visuellement les vibrations du sol.",
+      "Un rythme visuel influencé par le monde physique.",
+      "Être plongé dans l'ambiance lumineuse environnante."
+    ],
+    "rawValues": {
+      "Vibrations": "Aucunes",
+      "Graisse": "0"
     }
   },
   "temperature": {
     "name": "Température",
-    "sentences": [],
-    "rawValues": {}
+    "sentences": [
+      "Retranscrire une sensation/un comportement doux, modéré ou piquant.",
+      "Une expérience définie par les énergies thermiques locales.",
+      "Un visuel accessible à des périodes différentes, de peu à très éloignées."
+    ],
+    "rawValues": {
+      "Température": "0°",
+      "Graisse": "0",
+      "Contraste": "0"
+    }
   },
-  "touch": {
-    "name": "Touché",
-    "sentences": [],
-    "rawValues": {}
+  "sound": {
+    "name": "Sonorité",
+    "sentences": [
+      "Une représentation des vibrations acoustiques, la relation entre entendre et voir.",
+      "Visualiser bruits invisibles auxquels nous sommes exposés.",
+      "Une répercussion du monde réel sur le numérique."
+    ],
+    "rawValues": {
+      "Décibels": "0dB",
+      "Grade": 0
+    }
   }
 }
