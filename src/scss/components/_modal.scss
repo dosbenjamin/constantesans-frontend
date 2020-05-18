@@ -3,8 +3,16 @@
   width: 35vmax;
   background-color: #fff;
   box-shadow: 0 10px 23px rgba(0, 0, 0, 0.25);
-  display: none;
+  display: flex;
   border: 3px solid #fff;
+  flex-direction: column;
+  justify-content: space-between;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.c-modal.is-visible {
+  display: flex;
 }
 
 .c-modal__header {
@@ -18,7 +26,7 @@
   }
 }
 
-.c-modal__button {
+.c-modal__close {
   height: var(--vertical);
   width: var(--vertical);
   position: relative;
@@ -48,8 +56,19 @@
 }
 
 .c-modal__value {
+  white-space: nowrap;
   line-height: var(--vertical);
-  width: 50%;
   padding: units(0.5) var(--vertical);
-  font-size: ms(-2);
+  font-size: ms(-3);
+}
+
+.c-modal__resize {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 20px solid $cRed;
+  border-left: 20px solid transparent;
+  cursor: nwse-resize;
 }

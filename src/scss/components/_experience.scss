@@ -1,33 +1,53 @@
 .c-experience {
   padding: var(--vertical);
-  text-align: center;
   font-size: 2vw;
+  transition: all 1.5s;
+}
 
-  &--sound {
-    font-family: 'Agrandir', sans-serif;
-    font-size: 2.25vw;
-  }
+/* purgecss start ignore */
 
-  &--light {
-    font-family: 'ETC Trispace Variable', sans-serif;
-    font-variation-settings: 'wght' 100;
-    transition: all 1.5s;
-  }
+.c-experience--humidity {
+  font-family: 'Tiny Variable', sans-serif;
+  font-size: 2.75vw;
+}
 
-  &--dark {
-    background-color: #000;
-    font-variation-settings: "wght" 900;
-    font-size: 2.75vw;
-    color: #fff;
-  }
+.c-experience--light {
+  font-family: 'ETC Trispace Variable', sans-serif;
+  font-variation-settings: 'wght' 200;
+}
 
-  &__sentence {
-    display: none;
-    margin: 0 auto;
-    max-width: 14rem;
+.c-experience--dark {
+  font-size: 2.75vw;
+  background-color: #000;
+  font-variation-settings: "wght" 900;
+  color: #fff;
+}
 
-    &--visible {
-      display: block;
-    }
-  }
+.c-experience--movement {
+  font-family: 'Decovar Variable', sans-serif;
+  text-transform: uppercase;
+}
+
+.c-experience--sound {
+  font-family: 'Agrandir Variable', sans-serif;
+  font-size: 2.05vw;
+  transition: none;
+}
+
+.c-experience--temperature {
+  font-family: 'Kyiv*Type Serif Variable', serif;
+}
+
+.c-experience--vibration {
+  font-size: 1.75vw;
+  font-family: 'Syne Variable', serif;
+  font-variation-settings: 'wght' 400;
+  transition: all 250ms;
+}
+
+/*! purgecss end ignore */
+
+.c-experience__sentence {
+  display: none;
+  margin: 0 auto;
 }
