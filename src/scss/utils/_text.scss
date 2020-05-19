@@ -5,13 +5,10 @@
 }
 
 .u-bigText {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'League Mono Variable', sans-serif;
   font-weight: normal;
   font-size: ms(-1);
   text-transform: lowercase;
-  color: #fff;
-}
-
-.u-bold {
-  font-variation-settings: 'wght' 500;
+  color: inherit;
+  font-variation-settings: inherit;
 }

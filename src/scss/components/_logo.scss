@@ -1,0 +1,14 @@
+.c-logo {
+  padding: units(3) units(4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 3vmin;
+  line-height: units(1);
+  margin: 0;
+}
+
+.c-logo__letter {
+  transition: all 1s;
+  line-height: 10px;
+}

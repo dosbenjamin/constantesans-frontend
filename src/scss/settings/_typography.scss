@@ -7,7 +7,7 @@ $modularscale: (
   ratio: 1.333
 );
 
-$fontSize: 3.5vmin;
+$fontSize: 3vmin;
 
 :root {
   --vertical: calc((1.4 * #{$fontSize}) / 2);
@@ -18,8 +18,8 @@ html {
 }
 
 body {
-  font-family: 'Space Grotesk Variable', sans-serif;
-  font-variation-settings: 'wght' 450;
+  font-family: 'League Mono Variable', sans-serif;
+  font-variation-settings: 'wght' 450, 'wdth' 70;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: antialiased;

@@ -11,15 +11,18 @@
 
 .l-container__item {
   flex-grow: 1;
-  padding: units(2) units(5);
+  padding: units(2) units(4);
 }
 
 .l-container__item--banner {
   flex-grow: 0;
   padding: units(0.5) 0;
+  position: relative;
+  height: 5vmin;
 }
 
 .l-container__item--nav {
-  padding: units(2) units(5);
+  padding: units(3) units(4);
   max-width: units(22);
+  width: units(15);
 }

@@ -1,8 +1,13 @@
 .c-banner {
-  // font-family: 'Space Grotesk Variable', sans-serif;
   white-space: nowrap;
   font-size: ms(-1);
   overflow: hidden;
+  animation: banner 20s linear infinite;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-transform: uppercase;
+  font-variation-settings: 'wdth' 200, 'wght' 900;
 }
 
 .c-banner__item {
@@ -12,4 +17,9 @@
     content: '→';
     margin: 0 var(--vertical);
   }
+}
+
+@keyframes banner {
+  0% { right: 0; }
+  100% { right: -100%; }
 }

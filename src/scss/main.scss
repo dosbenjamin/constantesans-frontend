@@ -4,10 +4,10 @@
 @import '~modularscale-sass';
 
 // Settings
+@import './settings/colors';
 @import './settings/reset';
 @import './settings/fonts';
 @import './settings/typography';
-@import './settings/colors';
 
 // Helpers
 @import './utils/display';
@@ -17,6 +17,7 @@
 @import './layouts/container';
 
 // Components
+@import './components/logo';
 @import './components/hero';
 @import './components/banner';
 @import './components/about';
