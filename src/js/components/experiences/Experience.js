@@ -1,5 +1,6 @@
 import { $, $$ } from '../../helpers/DOMSelectors'
 import { RPi } from '../../helpers/raspberry'
+import { getRandomInt } from '../../helpers/random'
 
 /**
  * Class representing an abstract experience.
@@ -59,7 +60,7 @@ export default class Experience {
    */
   displaySentence () {
     const sentence = {
-      index: Math.floor(Math.random() * this.$sentences.length),
+      index: Math.floor(getRandomInt(0, this.$sentences.length - 1)),
 
       /**
        * Add the css class that display the sentence.
