@@ -30,7 +30,7 @@ export default class LightExperience extends Experience {
   /**
    * Apply typography style and insert values inside modal on light changes.
    *
-   * @param {string} state - The state of the light (on/off).
+   * @param {string} state - The state of the light (on/off)
    * @returns {void} Nothing
    */
   setVariation (state) {

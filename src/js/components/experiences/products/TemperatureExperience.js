@@ -26,7 +26,7 @@ export default class TemperatureExperience extends Experience {
   /**
    * Apply typography style and insert values inside modal on temperature changes.
    *
-   * @param {number} value - The temperature value in celsius.
+   * @param {number} value - The temperature value in celsius
    * @returns {void} Nothing
    */
   setVariation (value) {

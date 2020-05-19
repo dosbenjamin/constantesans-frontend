@@ -20,8 +20,8 @@ export default {
   /**
    * Create new experience.
    *
-   * @param {string} name - The name of the experience to create.
-   * @returns {object} The experience.
+   * @param {string} name - The name of the experience to create
+   * @returns {object} The experience
    */
   create: name => experiences[name]()
 }

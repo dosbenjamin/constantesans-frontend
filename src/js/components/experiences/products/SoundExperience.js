@@ -31,14 +31,14 @@ export default class SoundExperience extends Experience {
   /**
    * Apply typography style and insert values inside modal on sound changes.
    *
-   * @param {number} dB - The sound power in decibel.
-   * @param {number} percent - The sound power in percentage.
-   * @param {number} value - The sound power in raw value.
+   * @param {number} dB - The sound power in decibel
+   * @param {number} percent - The sound power in percentage
+   * @param {number} value - The sound power in raw value
    * @returns {void} Nothing
    */
   setVariation (dB, percent, value) {
     const weight = value * 900
-    this.$values[0].textContent = ` ${dB.toFixed(0)}`
+    this.$values[0].textContent = ` ${dB.toFixed(0)}dB`
     this.$values[1].textContent = ` ${weight.toFixed(0)}`
     this.$experience.style['font-variation-settings'] = `"wght" ${weight}`
   }

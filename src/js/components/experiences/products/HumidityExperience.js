@@ -26,7 +26,7 @@ export default class HumidityExperience extends Experience {
   /**
    * Apply typography style and insert values inside modal on humidity changes.
    *
-   * @param {number} value - The humidity value in percentage.
+   * @param {number} value - The humidity value in percentage
    * @returns {void} Nothing
    */
   setVariation (value) {

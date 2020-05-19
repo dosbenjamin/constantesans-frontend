@@ -11,7 +11,7 @@ export default class Modal {
   /**
    * Initialize and manage a modal.
    *
-   * @param {string} name - The name of the modal.
+   * @param {string} name - The name of the modal
    */
   constructor (name) {
     this.name = name
@@ -34,7 +34,7 @@ export default class Modal {
     this.isClosed = false
     this.$modal.classList.add('is-visible')
     this.experience && this.experience.toggle(this.isClosed)
-    this.size = (({ width, height }) => ({ width, height }))(this.$modal.getBoundingClientRect())
+    this.sizes = (({ width, height }) => ({ width, height }))(this.$modal.getBoundingClientRect())
   }
 
   /**
@@ -67,7 +67,8 @@ export default class Modal {
      * @returns {void} Nothing
      */
     const attach = event => {
-      if (event.target.classList.contains('c-modal__button')) return
+      event.preventDefault()
+      if (event.target.classList.contains('c-modal__close')) return
       const currentFront = $('.is-selected') ? $('.is-selected') : this.$modal
       isSelected = true
       currentFront.classList.remove('is-selected')
@@ -110,32 +111,49 @@ export default class Modal {
     const coords = { x: 0, y: 0 }
     let isResizing = false
 
+    /**
+     * Event when the resize button is clicked.
+     *
+     * @param {object} event - The event
+     * @returns {void} Nothing
+     */
     const attach = event => {
       isResizing = true
       coords.x = event.clientX
       coords.y = event.clientY
     }
 
+    /**
+     * Event while resizing the modal.
+     *
+     * @param {object} event - The event
+     * @returns {void} Nothing
+     */
     const drag = event => {
-      const newSize = (({ width, height }) => ({ width, height }))(this.$modal.getBoundingClientRect())
+      const newSizes = (({ width, height }) => ({ width, height }))(this.$modal.getBoundingClientRect())
       const newCoords = (({ x, y }) => ({ x, y }))(event)
 
       if (coords.x < newCoords.x) {
-        this.$modal.style.width = `${newSize.width + (newCoords.x - coords.x)}px`
-      } else if (coords.x > newCoords.x && newSize.width - (coords.x - newCoords.x) > this.size.width) {
-        this.$modal.style.width = `${newSize.width - (coords.x - newCoords.x)}px`
+        this.$modal.style.width = `${newSizes.width + (newCoords.x - coords.x)}px`
+      } else if (coords.x > newCoords.x && newSizes.width - (coords.x - newCoords.x) > this.sizes.width) {
+        this.$modal.style.width = `${newSizes.width - (coords.x - newCoords.x)}px`
       }
 
-      if (coords.y > newCoords.y && newSize.height - (coords.y - newCoords.y) > this.size.height) {
-        this.$modal.style.height = `${newSize.height - (coords.y - newCoords.y)}px`
+      if (coords.y > newCoords.y && newSizes.height - (coords.y - newCoords.y) > this.sizes.height) {
+        this.$modal.style.height = `${newSizes.height - (coords.y - newCoords.y)}px`
       } else if (coords.y < newCoords.y) {
-        this.$modal.style.height = `${newSize.height + (newCoords.y - coords.y)}px`
+        this.$modal.style.height = `${newSizes.height + (newCoords.y - coords.y)}px`
       }
 
       coords.x = event.clientX
       coords.y = event.clientY
     }
 
+    /**
+     * Event when the click is released on the resize button.
+     *
+     * @returns {void} Nothing
+     */
     const unattach = () => { isResizing = false }
 
     this.$resize.addEventListener('mousedown', attach)
