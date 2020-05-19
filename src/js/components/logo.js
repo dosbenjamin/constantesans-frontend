@@ -11,7 +11,7 @@ const $letters = $$('.c-logo__letter')
  */
 const animate = $letter => {
   $letter.style['font-variation-settings'] = `'wght' ${getRandomInt(100, 900)}, 'wdth' ${getRandomInt(50, 100)}`
-  $letter.style['font-size'] = `${getRandomInt(2, 4)}vmin`
+  $letter.style['font-size'] = `${getRandomInt(1, 2)}vmin`
 }
 
 /**
