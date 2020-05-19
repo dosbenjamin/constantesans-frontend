@@ -2,9 +2,9 @@
   "humidity": {
     "name": "Humidité",
     "sentences": [
-      "Impacter le visuel d'une interface numérique par un simple touché.",
-      "Impacter le visuel d'une interface numérique par un simple touché.",
-      "Impacter le visuel d'une interface numérique par un simple touché"
+      "Une sensation brumeuse au-delà du réel.",
+      "Plongez au sein d'une expérience digitale.",
+      "Omniprésent, visible numérique, invisible physique."
     ],
     "rawValues": {
       "Humidité": "0°",
@@ -15,8 +15,8 @@
     "name": "Luminosité",
     "sentences": [
       "Être plongé dans l'ambiance lumineuse environnante.",
-      "Être plongé dans l'ambiance lumineuse environnante.",
-      "Être plongé dans l'ambiance lumineuse environnante."
+      "Une atmosphère disponible à des instants divergents.",
+      "Le jour et la nuit/le sombre et l'éclairé simulés."
     ],
     "rawValues": {
       "État": "allumée",
@@ -27,8 +27,8 @@
     "name": "Mouvement",
     "sentences": [
       "Digitaliser des expressions corporelles.",
-      "Être plongé dans l'ambiance lumineuse environnante.",
-      "Être plongé dans l'ambiance lumineuse environnante."
+      "Des gestes interpretés et affichés à l'écran.",
+      "Un mouvement interferant une stabilité visuelle."
     ],
     "rawValues": {
       "Mouvements": "aucun",
@@ -41,7 +41,7 @@
     "sentences": [
       "Une représentation des vibrations acoustiques, la relation entre entendre et voir.",
       "Visualiser les bruits invisibles auxquels nous sommes exposés.",
-      "Une répercussion du monde réel sur le numérique."
+      "Des percussions du monde réel sur le numérique."
     ],
     "rawValues": {
       "Décibels": "0dB",
@@ -53,7 +53,7 @@
     "sentences": [
       "Retranscrire une sensation/un comportement doux, modéré ou piquant.",
       "Une expérience définie par les énergies thermiques locales.",
-      "Un visuel accessible à des périodes différentes, de peu à très éloignées."
+      "Un visuel accessible à des périodes différentes, peu ou très éloignées."
     ],
     "rawValues": {
       "Température": "0°",
@@ -64,9 +64,9 @@
   "vibration": {
     "name": "Vibration",
     "sentences": [
-      "Percevoir visuellement les vibrations du sol.",
+      "Percevoir visuellement les vibrations terrestres.",
       "Un rythme visuel influencé par le monde physique.",
-      "Être plongé dans l'ambiance lumineuse environnante."
+      "Une conformité, un équilibre menacé par les oscillations réelles."
     ],
     "rawValues": {
       "Vibrations": "aucunes",
