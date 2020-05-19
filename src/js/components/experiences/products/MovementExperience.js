@@ -1,4 +1,5 @@
 import Experience from '../Experience'
+import { getRandomInt } from '../../../helpers/random'
 
 /**
  * Class representing a movement experience.
@@ -7,8 +8,11 @@ export default class MovementExperience extends Experience {
   constructor () {
     super('movement')
     this.default = setInterval(() => {
-      this.$values[0].textContent = 'Aucuns'
-    }, 1500)
+      this.$values[0].textContent = 'aucuns'
+      this.$values[1].textContent = '500'
+      this.$values[2].textContent = '115'
+      this.$experience.style['font-variation-settings'] = `'wght' ${500}, 'wdth' ${115}`
+    }, 500)
   }
 
   /**
@@ -31,8 +35,14 @@ export default class MovementExperience extends Experience {
    * @returns {void} Nothing
    */
   setVariation () {
+    const variations = {
+      weight: getRandomInt(200, 900),
+      width: getRandomInt(100, 200)
+    }
     clearInterval(this.variation)
-    this.$values[0].textContent = 'Détectés'
-    this.$experience.style['font-variation-settings'] = ''
+    this.$values[0].textContent = 'détectés'
+    this.$values[1].textContent = variations.weight.toFixed(0)
+    this.$values[2].textContent = variations.width.toFixed(0)
+    this.$experience.style['font-variation-settings'] = `'wght' ${variations.weight}, 'wdth' ${variations.width}`
   }
 }
