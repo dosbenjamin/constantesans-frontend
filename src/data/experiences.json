@@ -31,20 +31,21 @@
       "Être plongé dans l'ambiance lumineuse environnante."
     ],
     "rawValues": {
-      "Mouvements": "Aucun",
-      "Graisse": "0"
+      "Mouvements": "aucun",
+      "Graisse": "500",
+      "Largeur": "115"
     }
   },
-  "vibration": {
-    "name": "Vibration",
+  "sound": {
+    "name": "Sonorité",
     "sentences": [
-      "Percevoir visuellement les vibrations du sol.",
-      "Un rythme visuel influencé par le monde physique.",
-      "Être plongé dans l'ambiance lumineuse environnante."
+      "Une représentation des vibrations acoustiques, la relation entre entendre et voir.",
+      "Visualiser les bruits invisibles auxquels nous sommes exposés.",
+      "Une répercussion du monde réel sur le numérique."
     ],
     "rawValues": {
-      "Vibrations": "Aucunes",
-      "Graisse": "0"
+      "Décibels": "0dB",
+      "Graisse": 0
     }
   },
   "temperature": {
@@ -60,16 +61,16 @@
       "Contraste": "0"
     }
   },
-  "sound": {
-    "name": "Sonorité",
+  "vibration": {
+    "name": "Vibration",
     "sentences": [
-      "Une représentation des vibrations acoustiques, la relation entre entendre et voir.",
-      "Visualiser bruits invisibles auxquels nous sommes exposés.",
-      "Une répercussion du monde réel sur le numérique."
+      "Percevoir visuellement les vibrations du sol.",
+      "Un rythme visuel influencé par le monde physique.",
+      "Être plongé dans l'ambiance lumineuse environnante."
     ],
     "rawValues": {
-      "Décibels": "0dB",
-      "Grade": 0
+      "Vibrations": "aucunes",
+      "Graisse": "0"
     }
   }
 }
