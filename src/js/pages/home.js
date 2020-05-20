@@ -4,7 +4,7 @@ import Modal from '../components/Modal'
 import experienceFactory from '../components/experiences/experienceFactory'
 import experiencesData from '../../data/experiences.json'
 import moveVariations from '../components/moveVariations'
-import logo from '../components/logo'
+// import logo from '../components/logo'
 
 const experiences = Object.keys(experiencesData)
 
@@ -30,6 +30,6 @@ export default {
     customLog.print()
     experiences.forEach(buildModal)
     moveVariations.init()
-    logo.init()
+    // logo.init()
   }
 }
