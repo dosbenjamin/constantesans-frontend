@@ -26,4 +26,12 @@
 @import './components/experience';
 
 // Others
-@import './others/states'
+@import './others/states';
+
+.demo {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  color: $cRed;
+  text-decoration: none;
+}
