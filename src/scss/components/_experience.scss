@@ -2,6 +2,10 @@
   padding: var(--vertical);
   font-size: 2vw;
   transition: all 1.5s;
+
+  @include mobile {
+    font-size: 12vmin;
+  }
 }
 
 /* purgecss start ignore */
@@ -9,6 +13,10 @@
 .c-experience--humidity {
   font-family: 'Tiny Variable', sans-serif;
   font-size: 2.75vw;
+
+  @include mobile {
+    font-size: 8vmin;
+  }
 }
 
 .c-experience--light {
@@ -20,6 +28,10 @@
   background-color: $cDarkGrey;
   font-variation-settings: 'wght' 900;
   color: #fff;
+
+  @include mobile {
+    font-size: 12vmin;
+  }
 }
 
 .c-experience--movement {
@@ -33,6 +45,10 @@
   font-family: 'Agrandir Variable', sans-serif;
   font-size: 2.05vw;
   transition: none;
+
+  @include mobile {
+    font-size: 8vmin;
+  }
 }
 
 .c-experience--temperature {
@@ -44,6 +60,10 @@
   font-family: 'Syne Variable', serif;
   font-variation-settings: 'wght' 400;
   transition: all 250ms;
+
+  @include mobile {
+    font-size: 8vmin;
+  }
 }
 
 /*! purgecss end ignore */

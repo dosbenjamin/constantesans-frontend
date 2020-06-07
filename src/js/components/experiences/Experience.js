@@ -19,7 +19,6 @@ export default class Experience {
     this.$modal = $(`[data-modal-${this.name}]`)
     this.$experience = $(`.c-experience--${this.name}`, this.$modal)
     this.$values = $$(`[data-modal-${this.name}] .js-value`)
-    console.log(this);
   }
 
   /**
