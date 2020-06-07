@@ -20,9 +20,9 @@ export default class Modal {
     this.$header = $('.c-modal__header', this.$modal)
     this.$resize = $('.c-modal__resize', this.$modal)
     this.$close = $('.c-modal__close', this.$modal)
+    this.$close.addEventListener('click', () => this.close())
     this.move()
     this.resize()
-    this.close()
   }
 
   /**
@@ -43,12 +43,9 @@ export default class Modal {
    * @returns {void} Nothing
    */
   close () {
-    const close = () => {
-      this.isClosed = true
-      this.$modal.classList.remove('is-visible', 'is-selected')
-      this.experience && this.experience.toggle(this.isClosed)
-    }
-    this.$close.addEventListener('click', close)
+    this.isClosed = true
+    this.$modal.classList.remove('is-visible', 'is-selected')
+    this.experience && this.experience.toggle(this.isClosed)
   }
 
   /**
