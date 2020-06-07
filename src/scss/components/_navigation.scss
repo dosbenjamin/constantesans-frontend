@@ -7,29 +7,41 @@
 }
 
 .c-nav__item {
-  line-height: var(--vertical);
+  position: relative;
+  z-index: 1;
+  transition: color 300ms;
+
+  &::before {
+    height: units(2);
+    width: calc(100% + 20px);
+    z-index: -1;
+    padding: 0 10px;
+    transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+    transform-origin: right;
+    transform: scaleX(0);
+    background: #fff;
+    position: absolute;
+    left: -10px;
+  }
+
+  &:hover {
+    color: $cDarkGrey;
+  }
+
+  /* purgecss start ignore */
+
+  &.is-active {
+    color: $cDarkGrey;
+
+    &::before {
+      transform: scaleX(1);
+      background: #fff;
+    }
+
+    .c-nav__button {
+      pointer-events: none;
+    }
+  }
+
+  /* purgecss end ignore */
 }
-
-/* purgecss start ignore */
-
-button {
-  &[data-button-light] {
-  }
-
-  &[data-button-movement] {
-  }
-
-  &[data-button-pressure] {
-  }
-
-  &[data-button-sound] {
-  }
-
-  &[data-button-temperature] {
-  }
-
-  &[data-button-touch] {
-  }
-}
-
-/* purgecss end ignore */

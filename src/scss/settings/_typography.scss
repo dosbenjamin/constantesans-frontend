@@ -7,14 +7,26 @@ $modularscale: (
   ratio: 1.333
 );
 
-$fontSize: 3vmin;
-
 :root {
-  --vertical: calc((1.4 * #{$fontSize}) / 2);
+  --font-size: 3vmin;
+
+  // @include desktopXL {
+  //   --font-size: 2.2vmin;
+  // }
+
+  @include mobile {
+    --font-size: 3vmin;
+  }
+
+  // @include tablet {
+  //   --font-size: 2vmin;
+  // }
+
+  --vertical: calc((1.4 * var(--font-size)) / 2);
 }
 
 html {
-  font-size: #{$fontSize};
+  font-size: var(--font-size);
 }
 
 body {

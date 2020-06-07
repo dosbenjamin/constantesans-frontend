@@ -30,6 +30,8 @@
   height: var(--vertical);
   width: var(--vertical);
   position: relative;
+  transition: 300ms;
+  transform-origin: center;
 
   &::before,
   &::after {
@@ -46,12 +48,16 @@
   &::after {
     transform: translateX(-50%) rotate(-45deg);
   }
+
+  &:hover {
+    transform: rotate(45deg);
+  }
 }
 
 .c-modal__footer {
   width: 100%;
   color: #fff;
-  background-color: #000;
+  background-color: $cDarkGrey;
   display: flex;
 }
 

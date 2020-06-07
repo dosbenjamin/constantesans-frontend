@@ -6,9 +6,9 @@
   font-size: 2vmin;
   line-height: units(1);
   margin: 0;
-}
 
-.c-logo__letter {
-  transition: all 1s;
-  line-height: 10px;
+  @include mobile {
+    margin-top: 1em;
+    font-size: 3vmin;
+  }
 }

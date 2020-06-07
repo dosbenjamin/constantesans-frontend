@@ -1,13 +1,16 @@
 .c-banner {
   white-space: nowrap;
   font-size: ms(-1);
-  overflow: hidden;
   animation: banner 20s linear infinite;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   text-transform: uppercase;
   font-variation-settings: 'wdth' 200, 'wght' 900;
+
+  @include mobile {
+    font-size: ms(0);
+  }
 }
 
 .c-banner__item {

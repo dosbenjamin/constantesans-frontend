@@ -3,4 +3,9 @@
   margin-top: units(3);
   min-width: 24em;
   max-width: 23em;
+
+  @include mobile {
+    min-width: unset;
+    max-width: unset;
+  }
 }

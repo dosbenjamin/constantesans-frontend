@@ -11,4 +11,8 @@
   text-transform: lowercase;
   color: inherit;
   font-variation-settings: inherit;
+
+  @include mobile {
+    font-size: ms(1);
+  }
 }

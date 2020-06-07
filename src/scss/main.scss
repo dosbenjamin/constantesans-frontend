@@ -4,6 +4,7 @@
 @import '~modularscale-sass';
 
 // Settings
+@import './utils/responsive';
 @import './settings/colors';
 @import './settings/reset';
 @import './settings/fonts';
@@ -24,6 +25,7 @@
 @import './components/navigation';
 @import './components/modal';
 @import './components/experience';
+@import './components/overallModal';
 
 // Others
 @import './others/states'
