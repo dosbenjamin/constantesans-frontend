@@ -1,0 +1,117 @@
+.c-overallModal {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: calc(100% - #{units(4)});
+  background: $cDarkGrey;
+  color: #fff;
+  z-index: 999;
+  transition: transform 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+
+  .c-overallModal__title {
+    margin: 0;
+    text-indent: 0.3em;
+  }
+
+  @include mobile {
+    transform: translateY(0);
+    left: 0;
+    top: calc(100% - #{units(12)});
+  }
+}
+
+.c-overallModal__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 units(3);
+  width: 100vh;
+  height: units(4);
+  position: absolute;
+  right: 100%;
+  transform: rotate(-90deg);
+  transform-origin: right top;
+  cursor: pointer;
+  transition: background-color 250ms;
+
+  &:hover {
+    background-color: lighten($cDarkGrey, 10);
+
+    @include mobile {
+      background-color: $cRed;
+    }
+  }
+
+  @include mobile {
+    transform: unset;
+    background-color: $cRed;
+    height: units(12);
+    width: 100%;
+    right: 0;
+  }
+}
+
+.c-overallModal__toggle {
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  transform: scaleY(1) rotate(-135deg);
+  height: calc(var(--vertical) / 1.5);
+  width: calc(var(--vertical) / 1.5);
+  transition: transform 250ms;
+  margin-top: calc(var(--vertical) / 3);
+}
+
+.c-overallModal__content {
+  background: #fff;
+  color: $cDarkGrey;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: calc(100% - #{units(4)});
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: units(8);
+  font-size: ms(2);
+
+  @include mobile {
+    top: units(12);
+    width: 100%;
+    height: calc(100% - #{units(12)});
+  }
+}
+
+/* purgecss start ignore */
+
+.c-overallModal--expanded {
+  transform: translateX(calc(-100% + #{units(4)}));
+
+  @include mobile {
+    transform: translateY(calc(-100% + #{units(12)}));
+  }
+
+  .c-overallModal__header {
+    background-color: lighten($cDarkGrey, 10);
+
+    @include mobile {
+      background-color: $cRed;
+    }
+
+    &:hover {
+      background-color: lighten($cDarkGrey, 20);
+
+      @include mobile {
+        background-color: $cRed;
+      }
+    }
+  }
+
+  .c-overallModal__toggle {
+    transform: scaleY(-1) rotate(-135deg);
+  }
+}
+
+/* purgecss end ignore */

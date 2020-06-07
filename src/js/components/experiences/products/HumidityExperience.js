@@ -30,8 +30,11 @@ export default class HumidityExperience extends Experience {
    * @returns {void} Nothing
    */
   setVariation (value) {
-    this.$values[0].textContent = `${value}%`
-    this.$values[1].textContent = value * 300 / 100
+    const updateValues = () => {
+      this.$values[0].textContent = `${value}%`
+      this.$values[1].textContent = value * 300 / 100
+    }
     this.$experience.style['font-variation-settings'] = `"wght" ${value * 300 / 100}`
+    this.isIsolated && updateValues()
   }
 }

@@ -30,10 +30,13 @@ export default class TemperatureExperience extends Experience {
    * @returns {void} Nothing
    */
   setVariation (value) {
-    this.$values[0].textContent = `${value}°`
-    value = value * 2.5 * 10
-    this.$experience.style['font-variation-settings'] = `"wght" ${value}, "CONT" ${1000 - value}`
-    this.$values[1].textContent = value
-    this.$values[2].textContent = 1000 - value
+    const rangedValue = value * 2.5 * 10
+    const updateValues = () => {
+      this.$values[0].textContent = `${value}°`
+      this.$values[1].textContent = rangedValue
+      this.$values[2].textContent = 1000 - rangedValue
+    }
+    this.$experience.style['font-variation-settings'] = `"wght" ${rangedValue}, "CONT" ${1000 - rangedValue}`
+    this.isIsolated && updateValues()
   }
 }

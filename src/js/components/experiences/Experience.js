@@ -15,21 +15,28 @@ export default class Experience {
    */
   constructor (name) {
     this.name = name
-    this.$experience = $(`.c-experience--${this.name}`)
-    this.$sentences = $$('.c-experience__sentence', this.$experience)
+    this.isIsolated = false
+    this.$modal = $(`[data-modal-${this.name}]`)
+    this.$experience = $(`.c-experience--${this.name}`, this.$modal)
     this.$values = $$(`[data-modal-${this.name}] .js-value`)
+    console.log(this);
   }
 
   /**
    * Start or stop the experience depending on the modal state.
    *
-   * @param {boolean} isClosed - The state of the modal (opened/closed).
+   * @param {boolean} state - The state of the modal (opened/closed).
    * @returns {void} Nothing
    */
-  toggle (isClosed) {
-    this.isClosed = isClosed
+  toggle (state) {
+    const action = state ? 'stop' : 'start'
+    const experience = {
+      start: () => { this.start(); this.$navigation.classList.add('is-active') },
+      stop: () => { this.stop(); this.$navigation.classList.remove('is-active') }
+    }
+    this.isClosed = state
     this.displaySentence()
-    isClosed ? this.stop() : this.start()
+    experience[action]()
   }
 
   /**
@@ -52,6 +59,12 @@ export default class Experience {
    * @returns {void} Nothing
    */
   setVariation () {}
+
+  isolate() {
+    this.isIsolated = true
+    this.$sentences = $$('.c-experience__sentence', this.$experience)
+    this.$navigation = $(`[data-button-${this.name}]`).parentElement
+  }
 
   /**
    * Choose randomly one sentence to display.

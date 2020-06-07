@@ -38,8 +38,11 @@ export default class SoundExperience extends Experience {
    */
   setVariation (dB, percent, value) {
     const weight = value * 900
-    this.$values[0].textContent = ` ${dB.toFixed(0)}dB`
-    this.$values[1].textContent = ` ${weight.toFixed(0)}`
+    const updateValues = () => {
+      this.$values[0].textContent = ` ${dB.toFixed(0)}dB`
+      this.$values[1].textContent = ` ${weight.toFixed(0)}`
+    }
     this.$experience.style['font-variation-settings'] = `"wght" ${weight}`
+    this.isIsolated && updateValues()
   }
 }

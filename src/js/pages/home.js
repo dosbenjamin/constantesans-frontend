@@ -1,10 +1,10 @@
-import { $ } from '../helpers/DOMSelectors'
-import customLog from '../components/customLog'
+import experiencesData from '../../data/experiences.json'
+import OverallModal from '../components/OverallModal'
 import Modal from '../components/Modal'
 import experienceFactory from '../components/experiences/experienceFactory'
-import experiencesData from '../../data/experiences.json'
+import { $ } from '../helpers/DOMSelectors'
 import moveVariations from '../components/moveVariations'
-// import logo from '../components/logo'
+import customLog from '../components/customLog'
 
 const experiences = Object.keys(experiencesData)
 
@@ -17,6 +17,7 @@ const experiences = Object.keys(experiencesData)
 const buildModal = experience => {
   const modal = new Modal(experience)
   modal.experience = experienceFactory.create(experience)
+  modal.experience.isolate()
   $(`[data-button-${experience}]`).addEventListener('click', () => { modal.isClosed && modal.open() })
 }
 
@@ -27,9 +28,10 @@ export default {
    * @returns {void} Nothing
    */
   init: () => {
-    customLog.print()
+    const overallModal = new OverallModal()
+    overallModal.bind(experiences)
     experiences.forEach(buildModal)
     moveVariations.init()
-    // logo.init()
+    customLog.print()
   }
 }
