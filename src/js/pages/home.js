@@ -16,10 +16,15 @@ const experiences = Object.keys(experiencesData)
  */
 const buildModal = experience => {
   const modal = new Modal(experience)
+  const $button = $(`[data-button-${experience}]`)
+  const action = {
+    open: () => modal.open(),
+    close: () => modal.close() && $button.classList.remove('is-active')
+  }
   modal.experience = experienceFactory.create(experience)
   modal.$experience = $('.c-experience', modal.$modal)
   modal.experience.isolate()
-  $(`[data-button-${experience}]`).addEventListener('click', () => { modal.isClosed && modal.open() })
+  $button.addEventListener('click', () => { modal.isClosed ? action.open() : action.close() })
 }
 
 export default {

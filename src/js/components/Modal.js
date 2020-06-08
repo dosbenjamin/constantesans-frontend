@@ -32,7 +32,7 @@ export default class Modal {
    */
   open () {
     this.isClosed = false
-    this.$modal.classList.add('is-visible')
+    this.$modal.classList.add('is-visible', 'is-selected')
     this.experience && this.experience.toggle(this.isClosed)
     this.sizes = (({ width, height }) => ({ width, height }))(this.$modal.getBoundingClientRect())
   }
@@ -106,7 +106,6 @@ export default class Modal {
 
   resize () {
     const coords = { x: 0, y: 0 }
-    // const windowSizes = (({ innerWidth, innerHeight }) => ({ innerWidth, innerHeight }))(window)
     let isResizing = false
 
     /**
