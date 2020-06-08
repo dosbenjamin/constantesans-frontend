@@ -10,6 +10,7 @@ export default class VibrationExperience extends Experience {
       this.$values[0].textContent = 'aucunes'
       this.$values[1].textContent = '500'
       this.$experience.style['font-variation-settings'] = `"wght" ${500}`
+      if (this.$experienceBis) this.$experienceBis.style['font-variation-settings'] = `"wght" ${500}`
     }, 200)
   }
 
@@ -34,8 +35,12 @@ export default class VibrationExperience extends Experience {
    */
   setVariation () {
     clearInterval(this.variation)
-    this.$values[0].textContent = 'détectées'
-    this.$values[1].textContent = '650'
+    const updateValues = () => {
+      this.$values[0].textContent = 'détectées'
+      this.$values[1].textContent = '650'
+    }
     this.$experience.style['font-variation-settings'] = `"wght" ${650}`
+    if (this.$experienceBis) this.$experienceBis.style['font-variation-settings'] = `"wght" ${650}`
+    this.isIsolated && updateValues()
   }
 }

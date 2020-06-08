@@ -44,5 +44,6 @@ export default class MovementExperience extends Experience {
     this.$values[1].textContent = variations.weight.toFixed(0)
     this.$values[2].textContent = variations.width.toFixed(0)
     this.$experience.style['font-variation-settings'] = `'wght' ${variations.weight}, 'wdth' ${variations.width}`
+    if (this.$experienceBis) this.$experienceBis.style['font-variation-settings'] = `'wght' ${variations.weight}, 'wdth' ${variations.width}`
   }
 }

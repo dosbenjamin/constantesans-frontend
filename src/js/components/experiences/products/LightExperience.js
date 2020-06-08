@@ -22,8 +22,6 @@ export default class LightExperience extends Experience {
    * @returns {void} Nothing
    */
   stop () {
-    this.$values[0].textContent = ''
-    this.$values[1].textContent = ''
     Experience.sensors.off('light_update')
   }
 
@@ -37,24 +35,36 @@ export default class LightExperience extends Experience {
     const variations = {
       content: { on: 'allumée', off: 'éteinte' },
       weight: { on: 200, off: 900 },
+      $parent: this.isIsolated ? this.$experience.parentElement : this.$experience.parentElement.parentElement,
       style: {
         /**
          * Remove the dark appareance when the light is on.
          *
          * @returns {void} Nothing
          */
-        on: () => this.$experience.classList.remove('c-experience--dark'),
+        on: () => {
+          this.$experience.classList.remove('c-experience--dark')
+          variations.$parent.style['background-color'] = '#fff'
+          variations.$parent.style.color = '#1b1d1c'
+        },
 
         /**
          * Add the dark appareance when the light is off.
          *
          * @returns {void} Nothing
          */
-        off: () => this.$experience.classList.add('c-experience--dark')
+        off: () => {
+          this.$experience.classList.add('c-experience--dark')
+          variations.$parent.style['background-color'] = '#1b1d1c'
+          variations.$parent.style.color = '#fff'
+        }
       }
     }
-    this.$values[0].textContent = variations.content[state]
-    this.$values[1].textContent = variations.weight[state]
+    const updateValues = () => {
+      this.$values[0].textContent = variations.content[state]
+      this.$values[1].textContent = variations.weight[state]
+    }
+    this.isIsolated && updateValues()
     variations.style[state]()
   }
 }

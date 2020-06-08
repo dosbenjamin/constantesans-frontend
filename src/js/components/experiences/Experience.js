@@ -30,11 +30,10 @@ export default class Experience {
   toggle (state) {
     const action = state ? 'stop' : 'start'
     const experience = {
-      start: () => { this.start(); this.$navigation.classList.add('is-active') },
+      start: () => { this.start(); this.$navigation.classList.add('is-active'); this.displaySentence()},
       stop: () => { this.stop(); this.$navigation.classList.remove('is-active') }
     }
     this.isClosed = state
-    this.displaySentence()
     experience[action]()
   }
 
@@ -91,7 +90,8 @@ export default class Experience {
         this.$sentence = null
       }
     }
-    this.$sentence = this.$sentence || this.$sentences[sentence.index]
-    this.isClosed ? sentence.hide() : sentence.show()
+    this.$sentence !== undefined && sentence.hide()
+    this.$sentence = this.$sentences[sentence.index]
+    sentence.show()
   }
 }

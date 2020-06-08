@@ -42,7 +42,9 @@ export default class SoundExperience extends Experience {
       this.$values[0].textContent = ` ${dB.toFixed(0)}dB`
       this.$values[1].textContent = ` ${weight.toFixed(0)}`
     }
+
     this.$experience.style['font-variation-settings'] = `"wght" ${weight}`
+    if (this.$experienceBis) this.$experienceBis.style['font-variation-settings'] = `"wght" ${weight}`
     this.isIsolated && updateValues()
   }
 }

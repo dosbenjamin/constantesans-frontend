@@ -1,4 +1,4 @@
-import { $ } from '../helpers/DOMSelectors'
+import { $, $$ } from '../helpers/DOMSelectors'
 import experienceFactory from './experiences/experienceFactory'
 
 export default class OverallModal {
@@ -14,6 +14,9 @@ export default class OverallModal {
     const bindExperience = experience => {
       this[experience] = experienceFactory.create(experience)
       this[experience].$experience = $(`.c-experience--${experience}`, this.$overallModal)
+      if (experience === 'movement') this[experience].$experienceBis = $$(`.c-experience--${experience}`, this.$overallModal)[1]
+      if (experience === 'sound') this[experience].$experienceBis = $$(`.c-experience--${experience}`, this.$overallModal)[1]
+      if (experience === 'vibration') this[experience].$experienceBis = $$(`.c-experience--${experience}`, this.$overallModal)[1]
     }
     this.experiences = experiences
     experiences.forEach(bindExperience)
