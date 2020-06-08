@@ -42,6 +42,12 @@
     @include mobile {
       background-color: $cRed;
     }
+
+    @include desktop {
+      .c-overallModal__toggle {
+        margin-top: -3px;
+      }
+    }
   }
 
   @include mobile {
@@ -54,13 +60,14 @@
 }
 
 .c-overallModal__toggle {
+  position: relative;
   border: solid #fff;
   border-width: 0 2px 2px 0;
   display: inline-block;
-  transform: scaleY(1) rotate(-135deg);
+  transform: scaleZ(1) rotate(-135deg);
   height: calc(var(--vertical) / 1.5);
   width: calc(var(--vertical) / 1.5);
-  transition: transform 250ms;
+  transition: transform 250ms, margin-top 500ms;
   margin-top: calc(var(--vertical) / 3);
 }
 
@@ -107,10 +114,22 @@
       @include mobile {
         background-color: $cRed;
       }
+
+      @include desktop {
+        .c-overallModal__toggle {
+          // ! TODO anim
+          margin-top: 0;
+          margin-bottom: -3px;
+        }
+      }
     }
   }
 
   .c-overallModal__toggle {
+    @include desktop {
+      top: -6px;
+    }
+
     transform: scaleY(-1) rotate(-135deg);
   }
 }

@@ -1,7 +1,7 @@
 .c-banner {
   white-space: nowrap;
   font-size: ms(-1);
-  animation: banner 20s linear infinite;
+  animation: banner 8s linear infinite reverse;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -23,6 +23,6 @@
 }
 
 @keyframes banner {
-  0% { right: 0; }
-  100% { right: -100%; }
+  0% { left: 0; }
+  100% { left: -100%; }
 }
