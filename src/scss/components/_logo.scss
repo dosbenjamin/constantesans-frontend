@@ -11,4 +11,8 @@
     margin-top: 1em;
     font-size: 4vmin;
   }
+
+  @include tablet {
+    font-size: 3vmin;
+  }
 }

@@ -1,5 +1,5 @@
-@mixin desktopXL {
-  @media (max-width: 1800px) {
+@mixin desktop {
+  @media (min-width: 1200px) and (max-width: 1900px) {
     @content;
   }
 }
@@ -11,7 +11,7 @@
 }
 
 @mixin mobile {
-  @media (min-width: 400px) and (max-width: 1200px) {
+  @media (min-width: 300px) and (max-width: 1200px) {
     @content;
   }
 }

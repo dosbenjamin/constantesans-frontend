@@ -8,4 +8,9 @@
     min-width: unset;
     max-width: unset;
   }
+
+  @include desktop {
+    min-width: unset;
+    max-width: unset;
+  }
 }

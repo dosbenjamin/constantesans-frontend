@@ -9,6 +9,7 @@
   justify-content: space-between;
   visibility: hidden;
   opacity: 0;
+  max-height: 100vh;
 }
 
 .c-modal.is-visible {
