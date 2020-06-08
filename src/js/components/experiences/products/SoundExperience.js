@@ -8,7 +8,7 @@ export default class SoundExperience extends Experience {
   constructor () {
     super('sound')
     this.sensor = new DecibelMeter()
-    this.sensor.sources.then(sources => {
+    navigator.userAgent.indexOf('Firefox') > 0 && this.sensor.sources.then(sources => {
       this.sensor.connect(sources[0])
     })
     this.sensor.on('sample', (dB, percent, value) => this.setVariation(dB, percent, value))
