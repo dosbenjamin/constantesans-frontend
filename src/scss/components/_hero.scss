@@ -1,8 +1,8 @@
 .c-hero {
   font-size: ms(2);
   margin-top: units(3);
-  min-width: 24em;
-  max-width: 23em;
+  min-width: 21em;
+  max-width: 15em;
 
   @include mobile {
     min-width: unset;
@@ -12,5 +12,38 @@
   @include desktop {
     min-width: unset;
     max-width: unset;
+  }
+
+  & + .u-bigText {
+    padding: units(3) units(4);
+    margin-right: units(4);
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: $cRed;
+    text-decoration: none;
+
+    @include mobile {
+      margin-top: 1.2em;
+      padding: units(3) units(4);
+      line-height: units(1);
+      font-size: ms(0);
+      margin-right: 0;
+    }
+
+    &::after {
+      width: 100%;
+      height: 1px;
+      top: 5px;
+      position: relative;
+      display: none;
+      background-color: $cRed;
+    }
+
+    &:hover {
+      &::after {
+        display: block;
+      }
+    }
   }
 }
