@@ -106,6 +106,7 @@ export default class Modal {
 
   resize () {
     const coords = { x: 0, y: 0 }
+    // const windowSizes = (({ innerWidth, innerHeight }) => ({ innerWidth, innerHeight }))(window)
     let isResizing = false
 
     /**
@@ -129,18 +130,23 @@ export default class Modal {
     const drag = event => {
       const newSizes = (({ width, height }) => ({ width, height }))(this.$modal.getBoundingClientRect())
       const newCoords = (({ x, y }) => ({ x, y }))(event)
+      const fontSize = newSizes.width > newSizes.height
+        ? (newSizes.width / window.innerWidth) * 10 + 'vh'
+        : (newSizes.height / window.innerHeight) * 3 + 'vw'
 
       if (coords.x < newCoords.x) {
         this.$modal.style.width = `${newSizes.width + (newCoords.x - coords.x)}px`
-      } else if (coords.x > newCoords.x && newSizes.width - (coords.x - newCoords.x) > this.sizes.width) {
+      } else if (coords.x > newCoords.x && newSizes.width - (coords.x - newCoords.x) > window.innerWidth / 4.25) {
         this.$modal.style.width = `${newSizes.width - (coords.x - newCoords.x)}px`
       }
 
-      if (coords.y > newCoords.y && newSizes.height - (coords.y - newCoords.y) > this.sizes.height) {
-        this.$modal.style.height = `${newSizes.height - (coords.y - newCoords.y)}px`
+      if (coords.y > newCoords.y) {
+        this.$modal.style['min-height'] = `${newSizes.height - (coords.y - newCoords.y)}px`
       } else if (coords.y < newCoords.y) {
-        this.$modal.style.height = `${newSizes.height + (newCoords.y - coords.y)}px`
+        this.$modal.style['min-height'] = `${newSizes.height + (newCoords.y - coords.y)}px`
       }
+
+      this.$experience.style['font-size'] = fontSize
 
       coords.x = event.clientX
       coords.y = event.clientY
