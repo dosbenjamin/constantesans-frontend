@@ -11,15 +11,7 @@ block header
 prepend modalsArea
   - const hasExperiences = true
 
-  section(class='c-overallModal')
-    ul(class='c-overallModal__header')
-      li: h3(class='c-overallModal__title u-bigText') Expérience globale
-      li(class='c-overallModal__toggle'): button(class='u-hideText') ouvrir
-    div(class='c-overallModal__content')
-      p.
-        Un support virtuel influencé par le réel, #[span(class='c-experience--humidity') mettre en relation l'utilisateur],
-        #[span(class='c-experience--temperature') l'environnement et la nature].#[span(class='c-experience--vibration') Retranscrire une dynamique],
-        #[span(class='c-experience--light') une  sensation],  #[span(class='c-experience--sound') une émotion, un invisible], #[span(class='c-experience--movement') expérimenter l'intéraction et l'immersion].
+  include layouts/home/overallExperience
 
 block footer
   include layouts/home/footer
