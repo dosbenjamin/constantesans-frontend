@@ -1,7 +1,5 @@
 import { $ } from '../helpers/DOMSelectors'
 
-// TODO: Garder la position en z-index de chaque fenêtre.
-// TODO: z-index le plus haut lors de l'affiche.
 // TODO: Adapter le taille des textes pendant le resize.
 
 /**
@@ -31,6 +29,8 @@ export default class Modal {
    * @returns {void} Nothing
    */
   open () {
+    const $currentFront = $('.is-selected') ? $('.is-selected') : this.$modal
+    $currentFront.classList.remove('is-selected')
     this.isClosed = false
     this.$modal.classList.add('is-visible', 'is-selected')
     this.experience && this.experience.toggle(this.isClosed)
@@ -66,12 +66,16 @@ export default class Modal {
     const attach = event => {
       event.preventDefault()
       if (event.target.classList.contains('c-modal__close')) return
-      const currentFront = $('.is-selected') ? $('.is-selected') : this.$modal
+      const $currentFront = $('.is-selected') ? $('.is-selected') : this.$modal
       isSelected = true
-      currentFront.classList.remove('is-selected')
+      $currentFront.classList.remove('is-selected')
       this.$modal.classList.add('is-selected')
       offset.x = event.offsetX
       offset.y = event.offsetY
+      this.$modal.parentElement.append(this.$modal)
+      // $('.c-modal:last-child').insertAdjacentHTML('afterend', this.$modal)
+      // insertAfter(this.$modal, this.$modal)
+      // $currentFront.parentNode.appendAfter($('.c-modal:last-child'))
     }
 
     /**

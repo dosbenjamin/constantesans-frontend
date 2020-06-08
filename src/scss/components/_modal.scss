@@ -11,20 +11,30 @@
   opacity: 0;
   max-height: 100vh;
   z-index: 10;
-
-  $offset: 10;
-
-  @for $i from 2 to 8 {
-    &:nth-child(#{$i}) {
-      left: #{$offset}vw;
-      top: #{$offset}vw;
-    }
-    $offset: $offset + 3;
-  }
+  transition-property: opacity, visibility;
+  transition-duration: 250ms, 200ms;
+  transition-delay: 50ms;
 }
+
+/* purgecss start ignore */
+
+$offset: 10;
+$modals: humidity, light, movement, sound, temperature, vibration;
+
+@each $modal in  $modals {
+  .c-modal[data-modal-#{$modal}] {
+    left: #{$offset}vw;
+    top: #{$offset}vw;
+  }
+  $offset: $offset + 3;
+}
+
+/* purgecss end ignore */
 
 .c-modal.is-visible {
   display: flex;
+  opacity: 1;
+  visibility: visible;
 }
 
 .c-modal__header {
