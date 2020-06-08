@@ -61,6 +61,7 @@
     "stylelint-config-standard": "^20.0.0"
   },
   "files-to-copy": [
-    "src/.htaccess"
+    "src/.htaccess",
+    "src/robots.txt"
   ]
 }
