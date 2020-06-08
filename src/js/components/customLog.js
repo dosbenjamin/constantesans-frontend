@@ -1,7 +1,7 @@
 const message = 'ConstanteSans'
 
 const style = `
-  background: #524bfb;
+  background: #ff4552;
   font-size: 10px;
   padding: 10px;
   text-transform: uppercase;
