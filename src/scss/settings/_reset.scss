@@ -23,5 +23,5 @@ p {
 }
 
 ::selection {
-  background: $cRed;
+  background: lighten($cDarkGrey, 60);
 }

@@ -73,9 +73,6 @@ export default class Modal {
       offset.x = event.offsetX
       offset.y = event.offsetY
       this.$modal.parentElement.append(this.$modal)
-      // $('.c-modal:last-child').insertAdjacentHTML('afterend', this.$modal)
-      // insertAfter(this.$modal, this.$modal)
-      // $currentFront.parentNode.appendAfter($('.c-modal:last-child'))
     }
 
     /**
@@ -133,13 +130,19 @@ export default class Modal {
     const drag = event => {
       const newSizes = (({ width, height }) => ({ width, height }))(this.$modal.getBoundingClientRect())
       const newCoords = (({ x, y }) => ({ x, y }))(event)
-      const fontSize = newSizes.width > newSizes.height
-        ? (newSizes.width / window.innerWidth) * 10 + 'vh'
-        : (newSizes.height / window.innerHeight) * 3 + 'vw'
+      let fontSize
+
+      if (newSizes.height >= newSizes.width) {
+        fontSize = (newSizes.height / window.innerHeight) * 6.5 + 'vh'
+      } else if (newSizes.width < newSizes.height) {
+        fontSize = (newSizes.height / window.innerHeight) * 3 + 'vh'
+      } else if (newSizes.width > newSizes.height) {
+        fontSize = (newSizes.width / window.innerWidth) * 10 + 'vh'
+      }
 
       if (coords.x < newCoords.x) {
         this.$modal.style.width = `${newSizes.width + (newCoords.x - coords.x)}px`
-      } else if (coords.x > newCoords.x && newSizes.width - (coords.x - newCoords.x) > window.innerWidth / 4.25) {
+      } else if (coords.x > newCoords.x && newSizes.width - (coords.x - newCoords.x) > window.innerWidth / 5) {
         this.$modal.style.width = `${newSizes.width - (coords.x - newCoords.x)}px`
       }
 

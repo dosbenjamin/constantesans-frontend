@@ -62,6 +62,7 @@
   },
   "files-to-copy": [
     "src/.htaccess",
-    "src/robots.txt"
+    "src/robots.txt",
+    "src/images/preview.svg"
   ]
 }
