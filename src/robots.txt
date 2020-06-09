@@ -74,6 +74,8 @@ User-agent: Yeti
 User-agent: YioopBot
 User-agent: yoozBot
 User-agent: YoudaoBot
+Allow: .js
+Allow: .css
 Disallow:
 User-agent: *
 Disallow: /
