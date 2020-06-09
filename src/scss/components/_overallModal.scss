@@ -39,14 +39,16 @@
   &:hover {
     background-color: lighten($cDarkGrey, 10);
 
-    @include mobile {
-      background-color: $cRed;
+    .c-overallModal__toggle {
+      margin-top: -3px;
+
+      @include mobile {
+        margin-top: 0;
+      }
     }
 
-    @include desktop {
-      .c-overallModal__toggle {
-        margin-top: -3px;
-      }
+    @include mobile {
+      background-color: $cRed;
     }
   }
 
@@ -58,6 +60,8 @@
     right: 0;
   }
 }
+
+/* stylelint-disable no-descending-specificity */
 
 .c-overallModal__toggle {
   position: relative;
@@ -115,23 +119,26 @@
         background-color: $cRed;
       }
 
-      @include desktop {
-        .c-overallModal__toggle {
-          // ! TODO anim
+      .c-overallModal__toggle {
+        margin-top: 18px;
+
+        @include mobile {
           margin-top: 0;
-          margin-bottom: -3px;
         }
       }
     }
   }
 
   .c-overallModal__toggle {
-    @include desktop {
-      top: -6px;
-    }
-
+    top: -6px;
     transform: scaleY(-1) rotate(-135deg);
+
+    @include mobile {
+      top: 0;
+    }
   }
 }
 
 /* purgecss end ignore */
+
+/* stylelint-enable no-descending-specificity */
