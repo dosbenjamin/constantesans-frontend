@@ -15,8 +15,8 @@
   }
 
   @include mobile {
-    height: 100%;
-    transform: translateY(0);
+    height: 100vh;
+    transform: translateY(10vh);
     bottom: -100%;
     left: 0;
     top: initial;
@@ -104,7 +104,7 @@
   transform: translateX(calc(-100% + #{units(4)}));
 
   @include mobile {
-    transform: translateY(-100%);
+    transform: translateY(-80%);
   }
 
   .c-overallModal__header {
