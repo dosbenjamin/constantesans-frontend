@@ -15,8 +15,8 @@
   }
 
   @include mobile {
-    height: 100vh;
-    transform: translateY(10vh);
+    height: 100%;
+    transform: translateY(0);
     bottom: -100%;
     left: 0;
     top: initial;
@@ -93,7 +93,7 @@
   @include mobile {
     top: 10vh;
     width: 100%;
-    height: calc(100% - 10vh);
+    height: 100%;
     padding: units(3);
   }
 }
@@ -104,7 +104,7 @@
   transform: translateX(calc(-100% + #{units(4)}));
 
   @include mobile {
-    transform: translateY(-80%);
+    transform: translateY(-100%);
   }
 
   .c-overallModal__header {
