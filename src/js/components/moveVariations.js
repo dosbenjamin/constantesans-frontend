@@ -25,8 +25,8 @@ export default {
     window.innerWidth > 1200 && window.addEventListener('mousemove', move)
     window.addEventListener('deviceorientation', e => {
       const sizes = {
-        height: getValueInRange((e.beta + 90) / 180 * 100, 10, 900),
-        width: getValueInRange((e.alpha + 90) / 180 * 100, 50, 100)
+        height: getValueInRange((e.alpha + 90) / 180 * 100, 100, 900),
+        width: getValueInRange((e.beta + 90) / 180 * 100, 50, 100)
       }
       document.body.style['font-variation-settings'] = `'wght' ${sizes.height}, 'wdth' ${sizes.width}`
     })
