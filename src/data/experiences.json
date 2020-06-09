@@ -3,8 +3,8 @@
     "name": "Humidité",
     "sentences": [
       "Une sensation brumeuse au-delà du réel.",
-      "Plongez au sein d'une expérience digitale.",
-      "Omniprésent, visible numérique, invisible physique."
+      "Plonger au sein d'une expérience digitale.",
+      "Omniprésente, visible numérique, invisible physique."
     ],
     "rawValues": {
       "Humidité": "0°",
@@ -28,7 +28,7 @@
     "sentences": [
       "Digitaliser des expressions corporelles.",
       "Des gestes interpretés et affichés à l'écran.",
-      "Un mouvement interferant une stabilité visuelle."
+      "Un mouvement interférant une stabilité visuelle."
     ],
     "rawValues": {
       "Mouvements": "aucun",

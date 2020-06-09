@@ -4,7 +4,7 @@
   transition: all 1.5s;
 
   @include mobile {
-    font-size: 12vmin;
+    font-size: 10vmin;
   }
 }
 
@@ -15,7 +15,7 @@
   font-size: 2.75vw;
 
   @include mobile {
-    font-size: 8vmin;
+    font-size: 7vmin;
   }
 }
 
@@ -29,7 +29,7 @@
   color: #fff;
 
   @include mobile {
-    font-size: 12vmin;
+    font-size: 9vmin;
   }
 }
 
@@ -46,7 +46,7 @@
   transition: none;
 
   @include mobile {
-    font-size: 8vmin;
+    font-size: 7vmin;
   }
 }
 
@@ -61,7 +61,7 @@
   transition: all 250ms;
 
   @include mobile {
-    font-size: 8vmin;
+    font-size: 7vmin;
   }
 }
 
