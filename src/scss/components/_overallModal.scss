@@ -15,9 +15,11 @@
   }
 
   @include mobile {
+    height: 100%;
     transform: translateY(0);
     left: 0;
-    top: calc(100% - #{units(12)});
+    bottom: calc(-100% + 10vh);
+    top: initial;
   }
 }
 
@@ -55,7 +57,7 @@
   @include mobile {
     transform: unset;
     background-color: $cRed;
-    height: units(12);
+    height: 10vh;
     width: 100%;
     right: 0;
   }

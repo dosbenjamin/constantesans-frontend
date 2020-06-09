@@ -5,7 +5,7 @@
   margin-right: units(4);
 
   @include mobile {
-    height: 50%;
+    height: 50vh;
     margin-right: 0;
   }
 }
@@ -15,7 +15,7 @@
   height: 40vh;
 
   @include mobile {
-    height: calc(50% - #{units(12)});
+    height: 40vh;
   }
 }
 
