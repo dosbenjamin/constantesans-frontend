@@ -22,6 +22,13 @@ export default {
    * @returns {void} Nothing
    */
   init () {
-    window.addEventListener('mousemove', move)
+    window.innerWidth > 1200 && window.addEventListener('mousemove', move)
+    window.addEventListener('deviceorientation', e => {
+      const sizes = {
+        width: getValueInRange((e.alpha + 90) / 180 * 100, 100, 900),
+        height: getValueInRange((e.beta + 90) / 180 * 100, 100, 900)
+      }
+      document.body.style['font-variation-settings'] = `'wght' ${sizes.height}, 'wdth' ${sizes.width}`
+    })
   }
 }
