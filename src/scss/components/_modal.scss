@@ -11,7 +11,7 @@
   opacity: 0;
   max-height: 100vh;
   z-index: 10;
-  transition-property: opacity, visibility;
+  transition-property: opacity, visibility, background;
   transition-duration: 250ms, 200ms;
   transition-delay: 50ms;
 }

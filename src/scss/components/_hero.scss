@@ -9,11 +9,6 @@
     max-width: unset;
   }
 
-  @include desktop {
-    min-width: unset;
-    max-width: unset;
-  }
-
   & + .u-bigText {
     padding: units(3) units(4);
     margin-right: units(4);
