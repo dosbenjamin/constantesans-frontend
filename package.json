@@ -4,7 +4,7 @@
   "main": "src/views/index.pug",
   "scripts": {
     "start": "parcel src/views/index.pug --out-dir public/ --port 3000",
-    "build": "parcel build src/views/index.pug --public-url ./ --out-dir public/ --no-source-maps --no-cache",
+    "build": "parcel build src/views/index.pug --public-url ./ --out-dir public/ --no-source-maps --no-cache --experimental-scope-hoisting",
     "lint": "npm-run-all -p lint:js lint:scss",
     "lint:fix": "npm-run-all -p lint:js:fix lint:scss:fix",
     "lint:js": "eslint src/js/**/*.js",
