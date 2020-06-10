@@ -2,14 +2,19 @@
   white-space: nowrap;
   font-size: ms(-1);
   animation: banner 8s linear infinite reverse;
-  position: absolute;
-  top: 50%;
   transform: translateY(-50%);
   text-transform: uppercase;
   font-variation-settings: 'wdth' 200, 'wght' 900;
+  display: flex;
+  align-items: center;
 
   @include mobile {
     font-size: ms(0);
+  }
+
+  &:not(:last-child)::after {
+    content: '→';
+    margin: 0 var(--vertical);
   }
 }
 
@@ -23,6 +28,6 @@
 }
 
 @keyframes banner {
-  0% { left: 0; }
-  100% { left: -100%; }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }

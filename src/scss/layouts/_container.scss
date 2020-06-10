@@ -30,6 +30,8 @@
   position: relative;
   height: 5vmin;
   overflow: hidden;
+  flex-direction: row;
+  display: flex;
 
   @include mobile {
     height: 10vmin;
