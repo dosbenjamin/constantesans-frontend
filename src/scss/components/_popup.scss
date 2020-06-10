@@ -1,0 +1,120 @@
+.c-popup.is-visible {
+  display: flex;
+}
+
+.c-popup {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  font-size: ms(2);
+  padding: units(4);
+  background-color: $cDarkGrey;
+  z-index: 999;
+  justify-content: flex-end;
+  flex-direction: column;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition-property: opacity, visibility, background;
+  transition-duration: 250ms, 200ms;
+  transition-delay: 50ms;
+
+  @media (min-width: 1900px) {
+    max-width: 1600px;
+    height: 55vh;
+    width: 85vmin;
+  }
+
+  @include desktopXL {
+    outline: 3px solid #fff;
+    height: 40vh;
+    width: 70vmin;
+    max-width: 880px;
+    margin: auto;
+    font-size: ms(0);
+
+    &::before {
+      height: 100vh;
+      width: 100vw;
+      background-color: #000;
+      opacity: 0.35;
+      top: 0;
+      left: 0;
+      position: fixed;
+      z-index: -1;
+    }
+  }
+
+  p {
+    margin-bottom: units(3);
+
+    @include desktopXL {
+      margin-bottom: units(2);
+    }
+  }
+
+  a {
+    font-size: ms(0);
+    text-decoration: none;
+    color: $cRed;
+    display: table;
+
+    &::after {
+      width: 100%;
+      height: 1px;
+      top: 5px;
+      position: relative;
+      opacity: 0;
+      background-color: $cRed;
+      transition: 250ms;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.c-popup__close {
+  height: units(4);
+  width: units(4);
+  position: absolute;
+  transform-origin: center;
+  top: 0;
+  right: 0;
+  margin-top: units(4);
+  margin-right: units(4);
+
+  @include desktopXL {
+    height: var(--vertical);
+    width: var(--vertical);
+    margin-top: units(2);
+    margin-right: units(2);
+  }
+
+  &::before,
+  &::after {
+    height: units(4);
+    width: 3px;
+    background-color: #fff;
+    left: 50%;
+
+    @include desktopXL {
+      height: var(--vertical);
+    }
+  }
+
+  &::before {
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translateX(-50%) rotate(-45deg);
+  }
+}

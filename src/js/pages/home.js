@@ -37,6 +37,7 @@ export default {
     const overallModal = new OverallModal()
     overallModal.bind(experiences)
     experiences.forEach(buildModal)
+    $('.c-popup__close').addEventListener('click', e => { $('.c-popup').classList.remove('is-visible') })
     moveVariations.init()
     customLog.print()
   }
