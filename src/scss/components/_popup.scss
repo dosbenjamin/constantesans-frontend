@@ -5,7 +5,7 @@
 .c-popup {
   position: fixed;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   top: 0;
   left: 0;
   bottom: 0;
@@ -61,6 +61,9 @@
     font-size: ms(0);
     text-decoration: none;
     color: $cRed;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
     display: table;
 
     &::after {
